@@ -5,7 +5,7 @@ $DATABASE_URL["port"] = null;
 $DATABASE_URL["user"] = null;
 $DATABASE_URL["pass"] = null;
 $DATABASE_URL["path"] = null;
-$DATABASE_URL = parse_url('Your database URL');
+$DATABASE_URL = parse_url('postgres://ikutiimelwbzmk:6c33a360f706df4e661e114080226eceecf18716657e7bc63488277e71cbe2bd@ec2-54-83-59-239.compute-1.amazonaws.com:5432/dbk3357u0o0fu0');
 return [
 
     /*
