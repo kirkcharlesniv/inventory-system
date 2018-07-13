@@ -52,7 +52,7 @@ class EmployeesController extends Controller
 //            'images/'.$imageName, 's3'
 //        );
 
-        $storagePath = Storage::disk('s3')->put("images/", $request->file('picture'), 'public');
+        $storagePath = Storage::disk('s3')->put("images", $request->file('picture'), 'public');
 
         $employee = new Employee;
         $employee->name = ucwords(strtolower($request->input('name')));
