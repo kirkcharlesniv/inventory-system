@@ -57,11 +57,16 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'region' => env('AWS_DEFAULT_REGION'),
-            'bucket' => env('AWS_BUCKET'),
-            'url' => env('AWS_URL'),
+//            'key' => env('AWS_ACCESS_KEY_ID'),
+//            'secret' => env('AWS_SECRET_ACCESS_KEY'),
+//            'region' => env('AWS_DEFAULT_REGION'),
+//            'bucket' => env('AWS_BUCKET'),
+//            'url' => env('AWS_URL'),
+            'key' => 'AKIAJ2NYC26TALFXNSFA',
+            'secret' => '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',
+            'region' => 'ap-southeast-1',
+            'bucket' => 'markelias',
+            'url' => 'http://markelias.s3-ap-southeast-1.amazonaws.com/',
         ],
 
     ],

@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2018-07-10 20:48:44.
+    * Generated on 2018-07-13 21:34:29.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -32,6 +32,7 @@ namespace PHPSTORM_META {
         'files' => \Illuminate\Filesystem\Filesystem::class,
         'filesystem' => \Illuminate\Filesystem\FilesystemManager::class,
         'filesystem.disk' => \Illuminate\Filesystem\FilesystemAdapter::class,
+        'filesystem.cloud' => \Illuminate\Filesystem\FilesystemAdapter::class,
         'Illuminate\Notifications\ChannelManager' => \Illuminate\Notifications\ChannelManager::class,
         'session' => \Illuminate\Session\SessionManager::class,
         'session.store' => \Illuminate\Session\Store::class,
@@ -171,6 +172,7 @@ namespace PHPSTORM_META {
         'files' => \Illuminate\Filesystem\Filesystem::class,
         'filesystem' => \Illuminate\Filesystem\FilesystemManager::class,
         'filesystem.disk' => \Illuminate\Filesystem\FilesystemAdapter::class,
+        'filesystem.cloud' => \Illuminate\Filesystem\FilesystemAdapter::class,
         'Illuminate\Notifications\ChannelManager' => \Illuminate\Notifications\ChannelManager::class,
         'session' => \Illuminate\Session\SessionManager::class,
         'session.store' => \Illuminate\Session\Store::class,
@@ -310,6 +312,7 @@ namespace PHPSTORM_META {
         'files' => \Illuminate\Filesystem\Filesystem::class,
         'filesystem' => \Illuminate\Filesystem\FilesystemManager::class,
         'filesystem.disk' => \Illuminate\Filesystem\FilesystemAdapter::class,
+        'filesystem.cloud' => \Illuminate\Filesystem\FilesystemAdapter::class,
         'Illuminate\Notifications\ChannelManager' => \Illuminate\Notifications\ChannelManager::class,
         'session' => \Illuminate\Session\SessionManager::class,
         'session.store' => \Illuminate\Session\Store::class,
@@ -449,6 +452,7 @@ namespace PHPSTORM_META {
         'files' => \Illuminate\Filesystem\Filesystem::class,
         'filesystem' => \Illuminate\Filesystem\FilesystemManager::class,
         'filesystem.disk' => \Illuminate\Filesystem\FilesystemAdapter::class,
+        'filesystem.cloud' => \Illuminate\Filesystem\FilesystemAdapter::class,
         'Illuminate\Notifications\ChannelManager' => \Illuminate\Notifications\ChannelManager::class,
         'session' => \Illuminate\Session\SessionManager::class,
         'session.store' => \Illuminate\Session\Store::class,
@@ -588,6 +592,7 @@ namespace PHPSTORM_META {
         'files' => \Illuminate\Filesystem\Filesystem::class,
         'filesystem' => \Illuminate\Filesystem\FilesystemManager::class,
         'filesystem.disk' => \Illuminate\Filesystem\FilesystemAdapter::class,
+        'filesystem.cloud' => \Illuminate\Filesystem\FilesystemAdapter::class,
         'Illuminate\Notifications\ChannelManager' => \Illuminate\Notifications\ChannelManager::class,
         'session' => \Illuminate\Session\SessionManager::class,
         'session.store' => \Illuminate\Session\Store::class,
@@ -727,6 +732,7 @@ namespace PHPSTORM_META {
         'files' => \Illuminate\Filesystem\Filesystem::class,
         'filesystem' => \Illuminate\Filesystem\FilesystemManager::class,
         'filesystem.disk' => \Illuminate\Filesystem\FilesystemAdapter::class,
+        'filesystem.cloud' => \Illuminate\Filesystem\FilesystemAdapter::class,
         'Illuminate\Notifications\ChannelManager' => \Illuminate\Notifications\ChannelManager::class,
         'session' => \Illuminate\Session\SessionManager::class,
         'session.store' => \Illuminate\Session\Store::class,
@@ -866,6 +872,7 @@ namespace PHPSTORM_META {
         'files' => \Illuminate\Filesystem\Filesystem::class,
         'filesystem' => \Illuminate\Filesystem\FilesystemManager::class,
         'filesystem.disk' => \Illuminate\Filesystem\FilesystemAdapter::class,
+        'filesystem.cloud' => \Illuminate\Filesystem\FilesystemAdapter::class,
         'Illuminate\Notifications\ChannelManager' => \Illuminate\Notifications\ChannelManager::class,
         'session' => \Illuminate\Session\SessionManager::class,
         'session.store' => \Illuminate\Session\Store::class,

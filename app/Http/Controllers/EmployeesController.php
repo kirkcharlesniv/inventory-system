@@ -48,7 +48,10 @@ class EmployeesController extends Controller
         ]);
 
         $imageName = time().'.'.request()->picture->getClientOriginalExtension();
-        $request->picture->move(public_path('images'), $imageName);
+//        $path = $request->file('picture')->store(
+//            'images/'.$imageName, 's3'
+//        );
+        Storage::disk('s3')->put($imageName, $request->file('picture'), 'public');
 
         $employee = new Employee;
         $employee->name = ucwords(strtolower($request->input('name')));
