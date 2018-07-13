@@ -52,7 +52,7 @@ class ItemsController extends Controller
         $item->remaining_stocks = ucwords(strtolower($request->input('initial_stocks')));
         $item->save();
 
-        return redirect('/dashboard/items')->with('success', 'New entry has been added.');
+        return redirect('/home/items')->with('success', 'New entry has been added.');
 
     }
 
@@ -113,7 +113,7 @@ class ItemsController extends Controller
         $item->remaining_stocks = ucwords(strtolower($request->input('remaining_stocks')));
         $item->save();
 
-        return redirect('/dashboard/items')->with('success', 'Entry has been updated.');
+        return redirect('/home/items')->with('success', 'Entry has been updated.');
     }
 
     /**
@@ -127,6 +127,6 @@ class ItemsController extends Controller
         $item = Item::find($id);
         $item->delete();
 
-        return redirect('/dashboard/items')->with('success', 'Entry has been deleted.');
+        return redirect('/home/items')->with('success', 'Entry has been deleted.');
     }
 }

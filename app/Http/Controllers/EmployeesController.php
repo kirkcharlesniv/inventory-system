@@ -62,7 +62,7 @@ class EmployeesController extends Controller
         $employee->picture = $imageName;
         $employee->save();
 
-        return redirect('/dashboard/employees')->with('success', 'New employee has been added.');
+        return redirect('/home/employees')->with('success', 'New employee has been added.');
     }
 
     /**
@@ -122,7 +122,7 @@ class EmployeesController extends Controller
         $employee->tin_number = ucwords(strtolower($request->input('id_num')));
         $employee->save();
 
-        return redirect('/dashboard/employees')->with('success', 'New employee has been updated.');
+        return redirect('/home/employees')->with('success', 'New employee has been updated.');
     }
 
     /**
@@ -136,6 +136,6 @@ class EmployeesController extends Controller
         $employee = Employee::find($id);
         $employee->delete();
 
-        return redirect('/dashboard/employees')->with('success', 'Employee has been deleted.');
+        return redirect('/home/employees')->with('success', 'Employee has been deleted.');
     }
 }

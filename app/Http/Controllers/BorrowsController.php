@@ -114,7 +114,7 @@ class BorrowsController extends Controller
         $borrow->save();
 
         DB::table('item_records')->where('id', $borrow->item_id)->decrement('remaining_stocks', $borrow->borrowed);
-        return redirect('/dashboard/items')->with('success', 'New item has been borrowed.');
+        return redirect('/home/items')->with('success', 'New item has been borrowed.');
     }
 
     /**
@@ -175,7 +175,7 @@ class BorrowsController extends Controller
         }
         $borrow->save();
 
-        return redirect('/dashboard/borrow')->with('success', 'Record has been updated.');
+        return redirect('/home/borrow')->with('success', 'Record has been updated.');
     }
 
     /**
@@ -192,6 +192,6 @@ class BorrowsController extends Controller
         DB::table('item_records')->where('id', $borrow->item_id)->increment('remaining_stocks', $take_back);
         $borrow->delete();
 
-        return redirect('/dashboard/borrow')->with('success', 'Borrowed Item\'s Record has been deleted.');
+        return redirect('/home/borrow')->with('success', 'Borrowed Item\'s Record has been deleted.');
     }
 }
