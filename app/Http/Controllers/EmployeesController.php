@@ -51,7 +51,8 @@ class EmployeesController extends Controller
 //        $path = $request->file('picture')->store(
 //            'images/'.$imageName, 's3'
 //        );
-        Storage::disk('s3')->put($imageName, $request->file('picture'), 'public');
+
+        $storagePath = Storage::disk('s3')->put("images/", $request->file('picture'), 'public');
 
         $employee = new Employee;
         $employee->name = ucwords(strtolower($request->input('name')));
@@ -59,7 +60,7 @@ class EmployeesController extends Controller
         $employee->address = ucwords(strtolower($request->input('address')));
         $employee->phone = ucwords(strtolower($request->input('phone')));
         $employee->tin_number = $request->input('id_num');
-        $employee->picture = $imageName;
+        $employee->picture = $storagePath;
         $employee->save();
 
         return redirect('/home/employees')->with('success', 'New employee has been added.');
