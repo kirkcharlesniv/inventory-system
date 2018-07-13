@@ -7,7 +7,7 @@
 @endsection
 
 @section('card_body')
-    {!! Html::image('https://s3-ap-southeast-1.amazonaws.com/markelias'.$employee->picture), 'profile', ['width' => '30%', 'height' => '30%'] !!}
+    {!! Html::image('https://s3-ap-southeast-1.amazonaws.com/markelias/'.$employee->picture), 'profile', ['width' => '30%', 'height' => '30%'] !!}
     <div class="table-responsive">
         <table class="table">
             <thead class=" text-primary">
