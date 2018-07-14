@@ -33,7 +33,7 @@
     {!! Form::close() !!}
     <script>
         $(document).ready(function($){
-            $('.tin_mask').mask("123-456-789-000");
+            $('.tin_mask').mask("000-000-000-000");
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
