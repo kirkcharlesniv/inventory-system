@@ -21,9 +21,6 @@ class CreateBorrowRecordsTable extends Migration
             $table->bigInteger('returned');
             $table->boolean('status');
             $table->timestamps();
-
-            $table->foreign('item_id')->references('id')->on('item_records');
-            $table->foreign('user_id')->references('id')->on('employees');
         });
     }
 
