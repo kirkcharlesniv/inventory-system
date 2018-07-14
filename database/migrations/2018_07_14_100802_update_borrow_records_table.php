@@ -17,7 +17,6 @@ class UpdateBorrowRecordsTable extends Migration
             $table->bigInteger('returned')->default('0')->change();
             $table->boolean('status')->default('0')->change();
             $table->dropTimestamps();
-            $table->nullableTimestamps();
         });
     }
 
