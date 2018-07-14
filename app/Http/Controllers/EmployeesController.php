@@ -59,7 +59,7 @@ class EmployeesController extends Controller
         $employee->id_num = strtoupper($request->input('id_num'));
         $employee->address = ucwords(strtolower($request->input('address')));
         $employee->phone = ucwords(strtolower($request->input('phone')));
-        $employee->tin_number = $request->input('id_num');
+        $employee->tin_number = $request->input('tin_number');
         $employee->picture = $storagePath;
         $employee->save();
 
