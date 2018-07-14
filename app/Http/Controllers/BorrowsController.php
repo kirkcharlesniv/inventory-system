@@ -111,8 +111,6 @@ class BorrowsController extends Controller
         $borrow->item_id = $request->input('item_selection');
         $borrow->user_id = $request->input('name_selection');
         $borrow->borrowed = $request->input('borrow_number');
-        $borrow->returned = 0;
-        $borrow->status = 0;
         $borrow->save();
 
         DB::table('item_records')->where('id', $borrow->item_id)->decrement('remaining_stocks', $borrow->borrowed);
