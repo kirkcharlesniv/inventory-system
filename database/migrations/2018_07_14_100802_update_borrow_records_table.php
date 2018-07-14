@@ -15,7 +15,7 @@ class UpdateBorrowRecordsTable extends Migration
     {
         Schema::table('borrow_records', function (Blueprint $table) {
             $table->bigInteger('returned')->default('0')->change();
-            $table->bigInteger('status')->default('0')->change();
+            $table->boolean('status')->default('0')->change();
             $table->dropTimestamps();
             $table->nullableTimestamps();
         });
