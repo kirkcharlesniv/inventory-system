@@ -19,7 +19,7 @@
     </div>
     <div class="form-group">
         {{Form::label('phone', 'Phone Number')}}
-        {{Form::text('phone', '', ['class' => 'form-control phonenumber', 'required' => 'required', 'minlength' => '13', 'maxlength' => '13'])}}
+        {{Form::text('phone', '09', ['class' => 'form-control phonenumber', 'required' => 'required', 'minlength' => '11', 'maxlength' => '11'])}}
     </div>
     <div class="form-group">
         {{Form::label('tin_number', 'TIN Number')}}
