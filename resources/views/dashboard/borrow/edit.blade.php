@@ -12,7 +12,7 @@
     {!! Form::open(['action' => ['BorrowsController@update', $borrow->borrow_id], 'method' => 'POST']) !!}
     <div class="form-group">
         {{Form::label('return_number', 'Amount to Return')}}
-        {{Form::number('return_number', $borrow->returned, ['class' => 'form-control', 'required' => 'required'])}}
+        {{Form::number('return_number', '', ['class' => 'form-control', 'required' => 'required', 'max' => $borrow->borrowed])}}
     </div>
     {{Form::hidden('item_id', $borrow->item_id)}}
     {{Form::hidden('_method', 'PUT')}}
