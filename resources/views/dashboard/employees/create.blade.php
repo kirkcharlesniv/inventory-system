@@ -6,6 +6,10 @@
 @section('card_body')
     {!! Form::open(['action' => 'EmployeesController@store', 'method' => 'POST', 'files' => true]) !!}
     <div class="form-group">
+        {{Form::label('picture', 'Add Profile Picture')}}
+        {{Form::file('picture')}}
+    </div>
+    <div class="form-group">
         {{Form::label('id_num', 'ID Number')}}
         {{Form::text('id_num', '', ['class' => 'form-control', 'required' => 'required'])}}
     </div>
@@ -24,10 +28,6 @@
     <div class="form-group">
         {{Form::label('tin_number', 'TIN Number')}}
         {{Form::text('tin_number', '', ['class' => 'form-control tin_mask', 'required' => 'required'])}}
-    </div>
-    <div class="form-group">
-        {{Form::label('picture', 'Click me to add a Profile Picture')}}
-        {{Form::file('picture')}}
     </div>
     {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
     {!! Form::close() !!}
