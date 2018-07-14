@@ -62,7 +62,6 @@ class BorrowsController extends Controller
 
                         '</tr>';
                 }
-                return json_encode($items);
                 return Response($output);
             }
         }
