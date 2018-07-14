@@ -62,7 +62,6 @@
                             $('#employee-records').html("");
                         },
                         success:function(data){
-                            console.log('stop');
                             $('#employee-records').html(data);
                         }
                     });
@@ -81,7 +80,6 @@
                     $('#employee-records').html("");
                 },
                 success:function(data){
-                    console.log('stop');
                     $('#employee-records').html(data);
                 }
             });
