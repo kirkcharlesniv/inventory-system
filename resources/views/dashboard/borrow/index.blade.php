@@ -56,7 +56,7 @@
                     $name=$("#name_selection").val();
                     $.ajax({
                         type : 'get',
-                        url : '{{URL::to('dashboard/borrow/employeerecords')}}',
+                        url : '{{URL::to('home/borrow/employeerecords')}}',
                         data:{'search':$name},
                         beforeSend: function() {
                             $('#employee-records').html("");
@@ -75,7 +75,7 @@
             $value=$(this).val();
             $.ajax({
                 type : 'get',
-                url : '{{URL::to('dashboard/borrow/employeerecords')}}',
+                url : '{{URL::to('home/borrow/employeerecords')}}',
                 data:{'search':$value},
                 beforeSend: function() {
                     $('#employee-records').html("");
