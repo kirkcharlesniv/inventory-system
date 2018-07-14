@@ -19,13 +19,20 @@
     </div>
     <div class="form-group">
         {{ Form::label('phone', 'Phone Number') }}
-        {{ Form::text('phone', $employee->phone, ['class' => 'form-control', 'required' => 'required', 'minlength' => '11', 'maxlength' => '11']) }}
+        {{ Form::text('phone', $employee->phone, ['class' => 'form-control phonenumber', 'required' => 'required', 'minlength' => '11', 'maxlength' => '11']) }}
     </div>
     <div class="form-group">
         {{ Form::label('tin_number', 'TIN Number') }}
-        {{ Form::number('tin_number', $employee->tin_number, ['class' => 'form-control', 'required' => 'required']) }}
+        {{ Form::number('tin_number', $employee->tin_number, ['class' => 'form-control tin_mask', 'required' => 'required']) }}
     </div>
     {{ Form::hidden('_method', 'PUT') }}
     {{ Form::submit('Submit', ['class' => 'btn btn-primary']) }}
     {!! Form::close() !!}
+    <script>
+        $(document).ready(function($){
+            $('.tin_mask').mask("999-999-999");
+            $('.phonenumber').mask("+639000000000");
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 @endsection

@@ -42,7 +42,7 @@ class EmployeesController extends Controller
             'name' => 'required|unique:employees',
             'id_num' => 'required|unique:employees',
             'address' => 'required',
-            'phone' => 'required|unique:employees|min:11|max:11',
+            'phone' => 'required|unique:employees|min:13|max:13',
             'tin_number' => 'required|unique:employees',
             'picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg'
         ]);
@@ -56,7 +56,7 @@ class EmployeesController extends Controller
 
         $employee = new Employee;
         $employee->name = ucwords(strtolower($request->input('name')));
-        $employee->id_num = $request->input('id_num');
+        $employee->id_num = strtoupper($request->input('id_num'));
         $employee->address = ucwords(strtolower($request->input('address')));
         $employee->phone = ucwords(strtolower($request->input('phone')));
         $employee->tin_number = $request->input('id_num');
@@ -111,7 +111,7 @@ class EmployeesController extends Controller
             'name' => 'required',
             'id_num' => 'required',
             'address' => 'required',
-            'phone' => 'required',
+            'phone' => 'required|min:13|max:13',
             'tin_number' => 'required'
         ]);
 
