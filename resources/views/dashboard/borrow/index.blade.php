@@ -43,7 +43,7 @@
             $value=$(this).val();
             $.ajax({
                 type : 'get',
-                url : '{{URL::to('dashboard/borrow/employeenames')}}',
+                url : '{{URL::to('home/borrow/employeenames')}}',
                 data:{'name_search':$value},
                 beforeSend: function () {
                     $("#name_selection").find('option')
