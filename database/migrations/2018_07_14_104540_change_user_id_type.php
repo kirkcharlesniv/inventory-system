@@ -14,8 +14,7 @@ class ChangeUserIdType extends Migration
     public function up()
     {
         Schema::table('borrow_records', function (Blueprint $table) {
-            $table->dropColumn('user_id');
-            $table->string('user_id');
+
         });
     }
 

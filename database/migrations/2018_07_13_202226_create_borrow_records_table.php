@@ -15,8 +15,8 @@ class CreateBorrowRecordsTable extends Migration
     {
         Schema::create('borrow_records', function (Blueprint $table) {
             $table->increments('borrow_id');
-            $table->bigInteger('item_id');
-            $table->bigInteger('user_id');
+            $table->string('item_id');
+            $table->string('user_id');
             $table->bigInteger('borrowed');
             $table->bigInteger('returned');
             $table->boolean('status');
