@@ -25,10 +25,10 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('home/borrow', 'BorrowsController');
     Route::resource('home/items', 'ItemsController');
 
-    Route::get('home/items/decrement/{id}', ['uses' =>'DashboardController@decrement']);
-    Route::get('home/borrow/search', 'BorrowsController@search');
-    Route::get('home/borrow/employeerecords', 'BorrowsController@employeerecords');
-    Route::get('home/borrow/employeenames', 'BorrowsController@employeenames');
+    Route::get('home/items/decrement/{id}', ['uses' =>'DashboardController@decrement'])->name('decrement');
+    Route::get('home/borrow/search', 'BorrowsController@search')->name('search');
+    Route::get('home/borrow/employeerecords', 'BorrowsController@employeerecords')->name('employee_search');
+    Route::get('home/borrow/employeenames', 'BorrowsController@employeenames')->name('name_search');
 
     Route::get('home/export', 'DashboardController@download');
 });
