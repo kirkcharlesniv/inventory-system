@@ -20,13 +20,15 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('home', 'DashboardController@index')->name('home');
-    Route::get('home/borrow/search', 'BorrowsController@search')->name('search');
-    Route::get('home/borrow/employeerecords', 'BorrowsController@employeerecords')->name('search');
-    Route::get('home/borrow/employeenames', 'BorrowsController@employeenames')->name('name_search');
 
     Route::resource('home/employees', 'EmployeesController');
     Route::resource('home/borrow', 'BorrowsController');
     Route::resource('home/items', 'ItemsController');
+
+    Route::get('home/items/decrement/{id}', ['uses' =>'DashboardController@decrement']);
+    Route::get('home/borrow/search', 'BorrowsController@search');
+    Route::get('home/borrow/employeerecords', 'BorrowsController@employeerecords');
+    Route::get('home/borrow/employeenames', 'BorrowsController@employeenames');
 
     Route::get('home/export', 'DashboardController@download');
 });
