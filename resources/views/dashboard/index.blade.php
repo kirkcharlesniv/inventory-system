@@ -215,8 +215,8 @@
                                         <td>
                                             <a class="btn btn-primary" href="home/items/{{$office->id}}">Show/Delete</a>
                                             <br><br>
-                                            <a class="btn btn-outline-success" href="home/items/{{$office->id}}/edit">-</a>
-                                            <a class="btn btn-outline-danger" href="home/items/decrement/{{$office->id}}">-</a>
+                                            <a class="btn btn-warning" href="home/items/{{$office->id}}/edit">Edit</a>
+                                            <a class="btn btn-danger" href="home/items/decrement/{{$office->id}}">-</a>
                                         </td>
                                     </tr>
                                 @endforeach

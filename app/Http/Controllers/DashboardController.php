@@ -38,6 +38,6 @@ class DashboardController extends Controller
     {
         DB::table('item_records')->where('id', $id)->decrement('remaining_stocks', 1);
 
-        return redirect('/home/items')->with('success', 'Entry has been decremented.');
+        return redirect('/home')->with('success', 'Entry has been decremented.');
     }
 }
