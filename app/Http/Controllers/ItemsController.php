@@ -37,6 +37,7 @@ class ItemsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            'stock_type' => 'required',
             'name' => 'required',
             'stock_code' => 'required|unique:item_records',
             'description' => 'required',
@@ -45,6 +46,7 @@ class ItemsController extends Controller
 
 
         $item = new Item;
+        $item->stock_type = $request->input('stock_type');
         $item->name = ucwords(strtolower($request->input('name')));
         $item->stock_code = ucwords(strtolower($request->input('stock_code')));
         $item->description = ucwords(strtolower($request->input('description')));
@@ -98,6 +100,7 @@ class ItemsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
+            'stock_type' => 'required',
             'name' => 'required',
             'stock_code' => 'required',
             'description' => 'required',
@@ -106,6 +109,7 @@ class ItemsController extends Controller
         ]);
 
         $item = Item::find($id);
+        $item->stock_type = $request->input('stock_type');
         $item->name = ucwords(strtolower($request->input('name')));
         $item->stock_code = ucwords(strtolower($request->input('stock_code')));
         $item->description = ucwords(strtolower($request->input('description')));
@@ -122,11 +126,26 @@ class ItemsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy($id)
     {
         $item = Item::find($id);
         $item->delete();
 
         return redirect('/home/items')->with('success', 'Entry has been deleted.');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+
+    public function decrement($id)
+    {
+        DB::table('item_records')->where('id', $id)->decrement('remaining_stocks', 1);
+
+        return redirect('/home/items')->with('success', 'Entry has been decremented.');
     }
 }

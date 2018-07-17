@@ -19,6 +19,7 @@ class ItemsRecords implements FromCollection, WithMapping, ShouldAutoSize, WithH
     public function headings(): array
     {
         return [
+            'Stock Type',
             'Item ID',
             'Stock Code',
             'Name',
@@ -35,7 +36,26 @@ class ItemsRecords implements FromCollection, WithMapping, ShouldAutoSize, WithH
      */
     public function map($row): array
     {
+        $type = "";
+        switch ($row->stock_type) {
+            case 0:
+                $type = "SMAW NC I";
+                break;
+            case 1:
+                $type = "Pipefitting  NC II";
+                break;
+            case 2:
+                $type = "Dressmaking NC 2";
+                break;
+            case 3:
+                $type = "Construction Painting NC II";
+                break;
+            case 4:
+                $type = "Office Supply";
+                break;
+        }
         return [
+            $type,
             $row->id,
             $row->stock_code,
             $row->name,

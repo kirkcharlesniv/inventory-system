@@ -6,6 +6,10 @@
 @section('card_body')
     {!! Form::open(['action' => ['ItemsController@update', $item->id], 'method' => 'POST']) !!}
     <div class="form-group">
+        {{ Form::label('stock_type', 'Stock Type') }}
+        {{ Form::select('stock_type', ['0' => 'SMAW NC I', '1' => 'Pipefitting  NC II', '2' =>'Dressmaking NC 2', '3' => 'Construction Painting NC II', '4' => 'Office Supply'], $item->stock_type) }}
+    </div>
+    <div class="form-group">
         {{ Form::label('name', 'Name') }}
         {{ Form::text('name', $item->name, ['class' => 'form-control', 'required' => 'required']) }}
     </div>
