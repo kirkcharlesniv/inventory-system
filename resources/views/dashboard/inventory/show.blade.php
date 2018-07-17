@@ -3,7 +3,7 @@
 @section('page_title', 'Inventory')
 
 @section('card_title')
-    {{ $item->name }}'s Inventory
+    {{ $item->name }} Records
 @endsection
 
 @section('card_body')
@@ -15,6 +15,7 @@
             <th>Description</th>
             <th>Initial Stocks</th>
             <th>Remaining Stocks</th>
+            <th>Delete</th>
             </thead>
             <tbody>
             @if(!empty($item))
@@ -24,6 +25,12 @@
                     <td>{{ $item->description }}</td>
                     <td>{{ $item->initial_stocks }}</td>
                     <td>{{ $item->remaining_stocks }}</td>
+                    <td>
+                        {!! Form::open(['action' => ['ItemsController@destroy', $item->id], 'method' => 'POST']) !!}
+                        {{ Form::hidden('_method', 'DELETE') }}
+                        {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
+                        {!! Form::close() !!}
+                    </td>
                 </tr>
             @endif
             </tbody>
