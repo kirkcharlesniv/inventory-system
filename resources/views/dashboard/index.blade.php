@@ -4,6 +4,7 @@
 
 @section('card_title', "Dashboard")
 @section('card_body')
+    <a class="btn btn-primary btn-outline-info" href="home/items">Show All</a>
     <div class="row">
         <div class="col-md-3">
             <button class="btn btn-primary btn-block" id="smaw">SMAW NC I</button>
@@ -48,13 +49,9 @@
                                     <td>{{ $smaw->initial_stocks }}</td>
                                     <td>{{ $smaw->remaining_stocks }}</td>
                                     <td>
-                                        <a class="btn btn-primary" href="items/{{$smaw->id}}">Show</a>
-                                        <a class="btn btn-primary" href="items/{{$smaw->id}}/edit">Edit</a>
+                                        <a class="btn btn-primary" href="home/items/{{$smaw->id}}">Show/Edit</a>
+                                        <a class="btn btn-primary" href="home/items/{{$smaw->id}}/edit">Edit</a>
                                         <br><br>
-                                        {!! Form::open(['action' => ['ItemsController@destroy', $smaw->id], 'method' => 'POST']) !!}
-                                        {{ Form::hidden('_method', 'DELETE') }}
-                                        {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
-                                        {!! Form::close() !!}
                                     </td>
                                 </tr>
                             @endforeach
@@ -93,13 +90,9 @@
                                     <td>{{ $pipe->initial_stocks }}</td>
                                     <td>{{ $pipe->remaining_stocks }}</td>
                                     <td>
-                                        <a class="btn btn-primary" href="items/{{$pipe->id}}">Show</a>
-                                        <a class="btn btn-primary" href="items/{{$pipe->id}}/edit">Edit</a>
+                                        <a class="btn btn-primary" href="home/items/{{$pipe->id}}">Show/Delete</a>
+                                        <a class="btn btn-primary" href="home/items/{{$pipe->id}}/edit">Edit</a>
                                         <br><br>
-                                        {!! Form::open(['action' => ['ItemsController@destroy', $pipe->id], 'method' => 'POST']) !!}
-                                        {{ Form::hidden('_method', 'DELETE') }}
-                                        {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
-                                        {!! Form::close() !!}
                                     </td>
                                 </tr>
                             @endforeach
@@ -138,13 +131,9 @@
                                     <td>{{ $dress->initial_stocks }}</td>
                                     <td>{{ $dress->remaining_stocks }}</td>
                                     <td>
-                                        <a class="btn btn-primary" href="items/{{$dress->id}}">Show</a>
-                                        <a class="btn btn-primary" href="items/{{$dress->id}}/edit">Edit</a>
+                                        <a class="btn btn-primary" href="home/items/{{$dress->id}}">Show/Delete</a>
+                                        <a class="btn btn-primary" href="home/items/{{$dress->id}}/edit">Edit</a>
                                         <br><br>
-                                        {!! Form::open(['action' => ['ItemsController@destroy', $dress->id], 'method' => 'POST']) !!}
-                                        {{ Form::hidden('_method', 'DELETE') }}
-                                        {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
-                                        {!! Form::close() !!}
                                     </td>
                                 </tr>
                             @endforeach
@@ -183,13 +172,9 @@
                                     <td>{{ $cons->initial_stocks }}</td>
                                     <td>{{ $cons->remaining_stocks }}</td>
                                     <td>
-                                        <a class="btn btn-primary" href="items/{{$cons->id}}">Show</a>
-                                        <a class="btn btn-primary" href="items/{{$cons->id}}/edit">Edit</a>
+                                        <a class="btn btn-primary" href="home/items/{{$cons->id}}">Show/Delete</a>
+                                        <a class="btn btn-primary" href="home/items/{{$cons->id}}/edit">Edit</a>
                                         <br><br>
-                                        {!! Form::open(['action' => ['ItemsController@destroy', $cons->id], 'method' => 'POST']) !!}
-                                        {{ Form::hidden('_method', 'DELETE') }}
-                                        {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
-                                        {!! Form::close() !!}
                                     </td>
                                 </tr>
                             @endforeach
@@ -228,12 +213,12 @@
                                         <td>{{ $office->initial_stocks }}</td>
                                         <td>{{ $office->remaining_stocks }}</td>
                                         <td>
-                                            <a class="btn btn-primary" href="items/{{$office->id}}">Show</a>
+                                            <a class="btn btn-primary" href="home/items/{{$office->id}}">Show/Delete</a>
                                             <br><br>
-                                            <a class="btn btn-outline-success" href="items/{{$office->id}}/edit">-</a>
-                                            {!! Form::open(['action' => ['ItemsController@decrement', $office->id], 'method' => 'POST']) !!}
+                                            <a class="btn btn-outline-success" href="home/items/{{$office->id}}/edit">-</a>
+                                            {!! Form::open(['action' => ['DashboardController@decrement', $office->id], 'method' => 'POST']) !!}
                                             {{ Form::hidden('_method', 'PUT') }}
-                                            {{ Form::submit('-', ['class' => 'btn btn-outline-danger']) }}
+                                            {{ Form::submit('- (Decrement)', ['class' => 'btn btn-outline-danger']) }}
                                             {!! Form::close() !!}
                                         </td>
                                     </tr>

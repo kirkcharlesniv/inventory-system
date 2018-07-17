@@ -32,12 +32,6 @@
                         <li class="{{active_check('home')}}">
                             <a href="{{ URL::route('home') }}">
                                 <i class="now-ui-icons loader_gear"></i>
-                                <p>Dashboard</p>
-                            </a>
-                        </li>
-                        <li class="{{active_check('home/items')}}">
-                            <a href="{{ action('ItemsController@index') }}">
-                                <i class="now-ui-icons design_app"></i>
                                 <p>Inventory</p>
                             </a>
                         </li>
@@ -47,6 +41,7 @@
                                 <p>Create New Item</p>
                             </a>
                         </li>
+                        <hr>
                         <li class="{{active_check('home/employees')}}">
                             <a href="{{ action('EmployeesController@index') }}">
                                 <i class="now-ui-icons users_single-02"></i>
@@ -59,6 +54,7 @@
                                 <p>Register A New Employee</p>
                             </a>
                         </li>
+                        <hr>
                         <li class="{{active_check('home/borrow')}}">
                             <a href="{{ action('BorrowsController@index') }}">
                                 <i class="now-ui-icons shopping_delivery-fast"></i>
@@ -71,6 +67,7 @@
                                 <p>Borrow New Item</p>
                             </a>
                         </li>
+                        <hr>g
                         <li>
                             <a href="{{ URL::to('home/export') }}" target="_blank">
                                 <i class="now-ui-icons design-2_ruler-pencil"></i>

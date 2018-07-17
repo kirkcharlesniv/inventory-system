@@ -141,11 +141,4 @@ class ItemsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
-    public function decrement($id)
-    {
-        DB::table('item_records')->where('id', $id)->decrement('remaining_stocks', 1);
-
-        return redirect('/home/items')->with('success', 'Entry has been decremented.');
-    }
 }
