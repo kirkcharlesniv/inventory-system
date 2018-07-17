@@ -24,13 +24,8 @@
                         <td>{{ $item->initial_stocks }}</td>
                         <td>{{ $item->remaining_stocks }}</td>
                         <td>
-                            <a class="btn btn-primary" href="items/{{$item->id}}">Show</a>
+                            <a class="btn btn-primary" href="items/{{$item->id}}">Show/Delete</a>
                             <a class="btn btn-primary" href="items/{{$item->id}}/edit">Edit</a>
-                            <br><br>
-                            {!! Form::open(['action' => ['ItemsController@destroy', $item->id], 'method' => 'POST']) !!}
-                                {{ Form::hidden('_method', 'DELETE') }}
-                                {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
-                            {!! Form::close() !!}
                         </td>
                     </tr>
                 @endforeach

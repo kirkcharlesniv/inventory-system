@@ -4,7 +4,7 @@
 
 @section('card_title', "Dashboard")
 @section('card_body')
-    <a class="btn btn-primary btn-outline-info" href="home/items">Show All</a>
+    <a class="btn btn-success btn-block" href="home/items">Show All</a>
     <div class="row">
         <div class="col-md-3">
             <button class="btn btn-primary btn-block" id="smaw">SMAW NC I</button>
