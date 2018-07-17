@@ -67,7 +67,7 @@
                                 <p>Borrow New Item</p>
                             </a>
                         </li>
-                        <hr>g
+                        <hr>
                         <li>
                             <a href="{{ URL::to('home/export') }}" target="_blank">
                                 <i class="now-ui-icons design-2_ruler-pencil"></i>
