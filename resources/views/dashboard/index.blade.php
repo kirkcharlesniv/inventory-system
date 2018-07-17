@@ -216,10 +216,7 @@
                                             <a class="btn btn-primary" href="home/items/{{$office->id}}">Show/Delete</a>
                                             <br><br>
                                             <a class="btn btn-outline-success" href="home/items/{{$office->id}}/edit">-</a>
-                                            {!! Form::open(['action' => ['DashboardController@decrement', $office->id], 'method' => 'POST']) !!}
-                                            {{ Form::hidden('_method', 'PUT') }}
-                                            {{ Form::submit('- (Decrement)', ['class' => 'btn btn-outline-danger']) }}
-                                            {!! Form::close() !!}
+                                            <a class="btn btn-outline-danger" href="home/items/decrement/{{$office->id}}">-</a>
                                         </td>
                                     </tr>
                                 @endforeach
