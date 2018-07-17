@@ -10,6 +10,10 @@
         {{ Form::select('stock_type', ['0' => 'SMAW NC I', '1' => 'Pipefitting  NC II', '2' =>'Dressmaking NC 2', '3' => 'Construction Painting NC II', '4' => 'Office Supply'], '0', ['class' => 'form-control']) }}
     </div>
     <div class="form-group">
+        {{ Form::label('inventory_type', 'Inventory Type') }}
+        {{ Form::select('inventory_type', ['0' => 'Tools and Equipments', '1' => 'Material'], '0', ['class' => 'form-control']) }}
+    </div>
+    <div class="form-group">
         {{ Form::label('name', 'Name') }}
         {{ Form::text('name', '', ['class' => 'form-control', 'required' => 'required']) }}
     </div>

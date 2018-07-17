@@ -37,6 +37,7 @@ class ItemsRecords implements FromCollection, WithMapping, ShouldAutoSize, WithH
     public function map($row): array
     {
         $type = "";
+        $inventory_type = "";
         switch ($row->stock_type) {
             case 0:
                 $type = "SMAW NC I";
@@ -54,8 +55,17 @@ class ItemsRecords implements FromCollection, WithMapping, ShouldAutoSize, WithH
                 $type = "Office Supply";
                 break;
         }
+        switch ($row->inventory_type) {
+            case 0:
+                $type = "Tools and Equipments";
+                break;
+            case 1:
+                $type = "Materials";
+                break;
+        }
         return [
             $type,
+            $inventory_type,
             $row->id,
             $row->stock_code,
             $row->name,

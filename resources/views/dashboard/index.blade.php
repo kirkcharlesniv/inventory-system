@@ -30,6 +30,7 @@
                     <h4 class="card-title">SMAW NC I</h4>
                 </div>
                 <div class="card-body">
+                    <h3>Tools and Equipments</h3>
                     <table class="table">
                         <thead class=" text-primary">
                         <th>Stock Code</th>
@@ -40,8 +41,8 @@
                         <th>Links</th>
                         </thead>
                         <tbody>
-                        @if(count($smaws) > 0)
-                            @foreach($smaws as $smaw)
+                        @if(count($smaws_t) > 0)
+                            @foreach($smaws_t as $smaw)
                                 <tr>
                                     <td>{{ $smaw->stock_code }}</td>
                                     <td>{{ $smaw->name }}</td>
@@ -52,6 +53,41 @@
                                         <a class="btn btn-primary" href="home/items/{{$smaw->id}}">Show/Edit</a>
                                         <a class="btn btn-primary" href="home/items/{{$smaw->id}}/edit">Edit</a>
                                         <br><br>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @else
+                            <span><b>No entry was found.</b></span>
+                        @endif
+                        </tbody>
+                    </table>
+                    <br>
+                    <hr>
+                    <br>
+                    <h3>Materials</h3>
+                    <table class="table">
+                        <thead class=" text-primary">
+                        <th>Stock Code</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Initial Stocks</th>
+                        <th>Remaining Stocks</th>
+                        <th>Links</th>
+                        </thead>
+                        <tbody>
+                        @if(count($smaws_m) > 0)
+                            @foreach($smaws_m as $smaw)
+                                <tr>
+                                    <td>{{ $smaw->stock_code }}</td>
+                                    <td>{{ $smaw->name }}</td>
+                                    <td>{{ $smaw->description }}</td>
+                                    <td>{{ $smaw->initial_stocks }}</td>
+                                    <td>{{ $smaw->remaining_stocks }}</td>
+                                    <td>
+                                        <a class="btn btn-primary" href="home/items/{{$smaw->id}}">Show/Delete</a>
+                                        <br><br>
+                                        <a class="btn btn-warning" href="home/items/{{$smaw->id}}/edit">Edit</a>
+                                        <a class="btn btn-danger" href="home/items/decrement/{{$smaw->id}}">-</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -71,6 +107,7 @@
                     <h4 class="card-title">Pipefitting NC II</h4>
                 </div>
                 <div class="card-body">
+                    <h3>Tools and Equipments</h3>
                     <table class="table">
                         <thead class=" text-primary">
                         <th>Stock Code</th>
@@ -81,8 +118,8 @@
                         <th>Links</th>
                         </thead>
                         <tbody>
-                        @if(count($pipes) > 0)
-                            @foreach($pipes as $pipe)
+                        @if(count($pipes_t) > 0)
+                            @foreach($pipes_t as $pipe)
                                 <tr>
                                     <td>{{ $pipe->stock_code }}</td>
                                     <td>{{ $pipe->name }}</td>
@@ -93,6 +130,41 @@
                                         <a class="btn btn-primary" href="home/items/{{$pipe->id}}">Show/Delete</a>
                                         <a class="btn btn-primary" href="home/items/{{$pipe->id}}/edit">Edit</a>
                                         <br><br>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @else
+                            <span><b>No entry was found.</b></span>
+                        @endif
+                        </tbody>
+                    </table>
+                    <br>
+                    <hr>
+                    <br>
+                    <h3>Materials</h3>
+                    <table class="table">
+                        <thead class=" text-primary">
+                        <th>Stock Code</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Initial Stocks</th>
+                        <th>Remaining Stocks</th>
+                        <th>Links</th>
+                        </thead>
+                        <tbody>
+                        @if(count($pipes_m) > 0)
+                            @foreach($pipes_m as $pipe)
+                                <tr>
+                                    <td>{{ $pipe->stock_code }}</td>
+                                    <td>{{ $pipe->name }}</td>
+                                    <td>{{ $pipe->description }}</td>
+                                    <td>{{ $pipe->initial_stocks }}</td>
+                                    <td>{{ $pipe->remaining_stocks }}</td>
+                                    <td>
+                                        <a class="btn btn-primary" href="home/items/{{$pipe->id}}">Show/Delete</a>
+                                        <br><br>
+                                        <a class="btn btn-warning" href="home/items/{{$pipe->id}}/edit">Edit</a>
+                                        <a class="btn btn-danger" href="home/items/decrement/{{$pipe->id}}">-</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -112,6 +184,7 @@
                     <h4 class="card-title">Dressmaking NC II</h4>
                 </div>
                 <div class="card-body">
+                    <h3>Tools and Equipments</h3>
                     <table class="table">
                         <thead class=" text-primary">
                         <th>Stock Code</th>
@@ -122,8 +195,8 @@
                         <th>Links</th>
                         </thead>
                         <tbody>
-                        @if(count($dresses) > 0)
-                            @foreach($dresses as $dress)
+                        @if(count($dresses_t) > 0)
+                            @foreach($dresses_t as $dress)
                                 <tr>
                                     <td>{{ $dress->stock_code }}</td>
                                     <td>{{ $dress->name }}</td>
@@ -134,6 +207,41 @@
                                         <a class="btn btn-primary" href="home/items/{{$dress->id}}">Show/Delete</a>
                                         <a class="btn btn-primary" href="home/items/{{$dress->id}}/edit">Edit</a>
                                         <br><br>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @else
+                            <span><b>No entry was found.</b></span>
+                        @endif
+                        </tbody>
+                    </table>
+                    <br>
+                    <hr>
+                    <br>
+                    <h3>Materials</h3>
+                    <table class="table">
+                        <thead class=" text-primary">
+                        <th>Stock Code</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Initial Stocks</th>
+                        <th>Remaining Stocks</th>
+                        <th>Links</th>
+                        </thead>
+                        <tbody>
+                        @if(count($dresses_m) > 0)
+                            @foreach($dresses_m as $dress)
+                                <tr>
+                                    <td>{{ $dress->stock_code }}</td>
+                                    <td>{{ $dress->name }}</td>
+                                    <td>{{ $dress->description }}</td>
+                                    <td>{{ $dress->initial_stocks }}</td>
+                                    <td>{{ $dress->remaining_stocks }}</td>
+                                    <td>
+                                        <a class="btn btn-primary" href="home/items/{{$dress->id}}">Show/Delete</a>
+                                        <br><br>
+                                        <a class="btn btn-warning" href="home/items/{{$dress->id}}/edit">Edit</a>
+                                        <a class="btn btn-danger" href="home/items/decrement/{{$dress->id}}">-</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -153,6 +261,7 @@
                     <h4 class="card-title">Construction Supply NC II</h4>
                 </div>
                 <div class="card-body">
+                    <h3>Tools and Equipments</h3>
                     <table class="table">
                         <thead class=" text-primary">
                         <th>Stock Code</th>
@@ -163,8 +272,8 @@
                         <th>Links</th>
                         </thead>
                         <tbody>
-                        @if(count($conses) > 0)
-                            @foreach($conses as $cons)
+                        @if(count($conses_t) > 0)
+                            @foreach($conses_t as $cons)
                                 <tr>
                                     <td>{{ $cons->stock_code }}</td>
                                     <td>{{ $cons->name }}</td>
@@ -175,6 +284,41 @@
                                         <a class="btn btn-primary" href="home/items/{{$cons->id}}">Show/Delete</a>
                                         <a class="btn btn-primary" href="home/items/{{$cons->id}}/edit">Edit</a>
                                         <br><br>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @else
+                            <span><b>No entry was found.</b></span>
+                        @endif
+                        </tbody>
+                    </table>
+                    <br>
+                    <hr>
+                    <br>
+                    <h3>Materials</h3>
+                    <table class="table">
+                        <thead class=" text-primary">
+                        <th>Stock Code</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Initial Stocks</th>
+                        <th>Remaining Stocks</th>
+                        <th>Links</th>
+                        </thead>
+                        <tbody>
+                        @if(count($conses_m) > 0)
+                            @foreach($conses_m as $cons)
+                                <tr>
+                                    <td>{{ $cons->stock_code }}</td>
+                                    <td>{{ $cons->name }}</td>
+                                    <td>{{ $cons->description }}</td>
+                                    <td>{{ $cons->initial_stocks }}</td>
+                                    <td>{{ $cons->remaining_stocks }}</td>
+                                    <td>
+                                        <a class="btn btn-primary" href="home/items/{{$cons->id}}">Show/Delete</a>
+                                        <br><br>
+                                        <a class="btn btn-warning" href="home/items/{{$cons->id}}/edit">Edit</a>
+                                        <a class="btn btn-danger" href="home/items/decrement/{{$cons->id}}">-</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -194,6 +338,41 @@
                     <h4 class="card-title">Office Supply</h4>
                 </div>
                 <div class="card-body">
+                    <h3>Tools and Equipments</h3>
+                    <table class="table">
+                        <thead class=" text-primary">
+                        <th>Stock Code</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Initial Stocks</th>
+                        <th>Remaining Stocks</th>
+                        <th>Links</th>
+                        </thead>
+                        <tbody>
+                        @if(count($offices_t) > 0)
+                            @foreach($offices_t as $office)
+                                <tr>
+                                    <td>{{ $office->stock_code }}</td>
+                                    <td>{{ $office->name }}</td>
+                                    <td>{{ $office->description }}</td>
+                                    <td>{{ $office->initial_stocks }}</td>
+                                    <td>{{ $office->remaining_stocks }}</td>
+                                    <td>
+                                        <a class="btn btn-primary" href="home/items/{{$office->id}}">Show/Delete</a>
+                                        <a class="btn btn-primary" href="home/items/{{$office->id}}/edit">Edit</a>
+                                        <br><br>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @else
+                            <span><b>No entry was found.</b></span>
+                        @endif
+                        </tbody>
+                    </table>
+                    <br>
+                    <hr>
+                    <br>
+                    <h3>Materials</h3>
                     <table class="table">
                         <thead class=" text-primary">
                             <th>Stock Code</th>
@@ -204,8 +383,8 @@
                             <th>Links</th>
                             </thead>
                         <tbody>
-                            @if(count($offices) > 0)
-                                @foreach($offices as $office)
+                            @if(count($offices_m) > 0)
+                                @foreach($offices_m as $office)
                                     <tr>
                                         <td>{{ $office->stock_code }}</td>
                                         <td>{{ $office->name }}</td>

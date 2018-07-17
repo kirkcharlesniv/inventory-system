@@ -35,7 +35,7 @@ class UsersExport implements FromCollection, WithMultipleSheets, WithMapping, Sh
             $row->name,
             $row->address,
             $row->phone,
-            $row->tin_number
+            $row->tin_number.'-000'
         ];
     }
 
