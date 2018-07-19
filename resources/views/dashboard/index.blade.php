@@ -9,7 +9,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editItemValueLongTitle">Increment/Decrement Value</h5>
+                <h5 class="modal-title" id="editItemValueLongTitle">Decrement Value</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -23,15 +23,16 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">-</div>
                                     </div>
-                                    <input type="text" class="form-control" id="decrementValue" placeholder="Decrement Value" min="1">
+                                    <form>
+                                        <input type="text" class="form-control" id="decrementValue" placeholder="Decrement Value" min="1" max="1">
+                                    </form>
+                                    <br>
+                                    <button id="decrement_btn" class="decrementButton btn btn-danger">Save</button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button id="decrement_btn" class="decrementButton btn btn-danger">Save</button>
             </div>
         </div>
     </div>
@@ -357,7 +358,7 @@
                                     <td>
                                         <a class="btn btn-primary" href="home/items/{{$cons->id}}">Show/Delete</a>
                                         <br><br>
-                                        <a class="btn btn-success" href="home/items/{{$smaw->id}}/edit">Increment</a>
+                                        <a class="btn btn-success" href="home/items/{{$cons->id}}/edit">Increment</a>
                                         <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$cons->id}}" data-max="{{abs($cons->initial_stocks - $cons->remaining_stocks)}}" data-toggle="modal" data-target="#editItemValue">
                                             Decrement
                                         </button>
@@ -436,7 +437,7 @@
                                         <td>
                                             <a class="btn btn-primary" href="home/items/{{$office->id}}">Show/Delete</a>
                                             <br><br>
-                                            <a class="btn btn-success" href="home/items/{{$smaw->id}}/edit">Increment</a>
+                                            <a class="btn btn-success" href="home/items/{{$office->id}}/edit">Increment</a>
                                             <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$office->id}}" data-max="{{abs($office->initial_stocks - $office->remaining_stocks)}}" data-toggle="modal" data-target="#editItemValue">
                                                 Decrement
                                             </button>
