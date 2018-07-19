@@ -145,7 +145,7 @@
                                     <td>
                                         <a class="btn btn-primary" href="home/items/{{$smaw->id}}">Show/Delete</a>
                                         <br><br>
-                                        <a class="btn btn-success" href="home/items/{{$smaw->id}}/edit">Increment</a>
+                                        <a class="btn btn-success" href="home/items/{{$smaw->id}}/edit">Edit/Add Value</a>
                                         <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$smaw->id}}" data-max="{{abs($smaw->initial_stocks - $smaw->remaining_stocks)}}" data-toggle="modal" data-target="#editItemValue">
                                             Decrement
                                         </button>
@@ -248,7 +248,7 @@
                                     <td>
                                         <a class="btn btn-primary" href="home/items/{{$pipe->id}}">Show/Delete</a>
                                         <br><br>
-                                        <a class="btn btn-success" href="home/items/{{$pipe->id}}/edit">Increment</a>
+                                        <a class="btn btn-success" href="home/items/{{$pipe->id}}/edit">Edit/Add Value</a>
                                         <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$pipe->id}}" data-max="{{abs($pipe->initial_stocks - $pipe->remaining_stocks)}}" data-toggle="modal" data-target="#editItemValue">
                                             Decrement
                                         </button>
@@ -351,7 +351,7 @@
                                     <td>
                                         <a class="btn btn-primary" href="home/items/{{$dress->id}}">Show/Delete</a>
                                         <br><br>
-                                        <a class="btn btn-success" href="home/items/{{$dress->id}}/edit">Increment</a>
+                                        <a class="btn btn-success" href="home/items/{{$dress->id}}/edit">Edit/Add Value</a>
                                         <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$dress->id}}" data-max="{{abs($dress->initial_stocks - $dress->remaining_stocks)}}" data-toggle="modal" data-target="#editItemValue">
                                             Decrement
                                         </button>
@@ -455,7 +455,7 @@
                                     <td>
                                         <a class="btn btn-primary" href="home/items/{{$cons->id}}">Show/Delete</a>
                                         <br><br>
-                                        <a class="btn btn-success" href="home/items/{{$cons->id}}/edit">Increment</a>
+                                        <a class="btn btn-success" href="home/items/{{$cons->id}}/edit">Edit/Add Value</a>
                                         <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$cons->id}}" data-max="{{abs($cons->initial_stocks - $cons->remaining_stocks)}}" data-toggle="modal" data-target="#editItemValue">
                                             Decrement
                                         </button>
@@ -558,7 +558,7 @@
                                         <td>
                                             <a class="btn btn-primary" href="home/items/{{$office->id}}">Show/Delete</a>
                                             <br><br>
-                                            <a class="btn btn-success" href="home/items/{{$office->id}}/edit">Increment</a>
+                                            <a class="btn btn-success" href="home/items/{{$office->id}}/edit">Edit/Add Value</a>
                                             <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$office->id}}" data-max="{{abs($office->initial_stocks - $office->remaining_stocks)}}" data-toggle="modal" data-target="#editItemValue">
                                                 Decrement
                                             </button>
