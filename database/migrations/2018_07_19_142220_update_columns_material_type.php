@@ -15,7 +15,7 @@ class UpdateColumnsMaterialType extends Migration
     {
         DB::table('item_records')
             ->where('inventory_type', '1')
-            ->update(['material_type', '0']);
+            ->update(['material_type' => '0']);
     }
 
     /**
