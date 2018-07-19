@@ -585,20 +585,19 @@
             });
             $(document).on("click", ".decrementButton", function () {
                 decrement_value = $('#decrementValue').val();
-                $("#decrementValue").attr("max", max_value);
-                $.ajax({
-                    type : 'get',
-                    url : '{{URL::to('home/items/decrement')}}',
-                    data: {'id': item_id, 'value': decrement_value},
-                    success: function() {
-                        location.reload();
-                    }
-                });
+                if (decrement_value > max_value) {
+                    alert('You shouldn\'t go higher than ' + max_value + '.');
+                } else {
+                    $.ajax({
+                        type : 'get',
+                        url : '{{URL::to('home/items/decrement')}}',
+                        data: {'id': item_id, 'value': decrement_value},
+                        success: function() {
+                            location.reload();
+                        }
+                    });
+                }
             });
-            function print_vars() {
-                console.log(item_id);
-                console.log(decrement_value);
-            }
             $("#smaw").click(function () {
                 $("#pipefitting_content").fadeOut();
                 $("#dress_content").fadeOut();
