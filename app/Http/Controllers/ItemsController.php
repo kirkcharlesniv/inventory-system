@@ -40,16 +40,22 @@ class ItemsController extends Controller
         $this->validate($request, [
             'stock_type' => 'required',
             'inventory_type' => 'required',
+            'material_type' => 'required',
             'name' => 'required',
             'stock_code' => 'required|unique:item_records',
             'description' => 'required',
             'initial_stocks' => 'required'
         ]);
 
+        if ($request->inventory_type !== 1) {
+            $request->material_type = 'null';
+        }
+
 
         $item = new Item;
         $item->stock_type = $request->input('stock_type');
         $item->inventory_type = $request->input('inventory_type');
+        $item->material_type = $request->input('material_type');
         $item->name = ucwords(strtolower($request->input('name')));
         $item->stock_code = ucwords(strtolower($request->input('stock_code')));
         $item->description = ucwords(strtolower($request->input('description')));
@@ -105,6 +111,7 @@ class ItemsController extends Controller
         $this->validate($request, [
             'stock_type' => 'required',
             'inventory_type' => 'required',
+            'material_type' => 'required',
             'name' => 'required',
             'stock_code' => 'required',
             'description' => 'required',
@@ -112,9 +119,14 @@ class ItemsController extends Controller
             'remaining_stocks' => 'required'
         ]);
 
+        if ($request->inventory_type !== 1) {
+            $request->material_type = 'null';
+        }
+
         $item = Item::find($id);
         $item->stock_type = $request->input('stock_type');
         $item->inventory_type = $request->input('inventory_type');
+        $item->material_type = $request->input('material_type');
         $item->name = ucwords(strtolower($request->input('name')));
         $item->stock_code = ucwords(strtolower($request->input('stock_code')));
         $item->description = ucwords(strtolower($request->input('description')));
@@ -131,7 +143,6 @@ class ItemsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
     public function destroy($id)
     {
         $item = Item::find($id);

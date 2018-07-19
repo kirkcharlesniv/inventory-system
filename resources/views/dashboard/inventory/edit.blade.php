@@ -13,6 +13,10 @@
         {{ Form::label('inventory_type', 'Inventory Type') }}
         {{ Form::select('inventory_type', ['0' => 'Tools and Equipments', '1' => 'Material'], $item->inventory_type, ['class' => 'form-control']) }}
     </div>
+    <div class="form-group" id="materialDiv" style="display:none">
+        {{ Form::label('material_type', 'Material Type') }}
+        {{ Form::select('inventory_type', ['0' => 'Ream/s', '1' => 'Box/es', '2' => 'Kilogram/s', '3' => 'Piece/s', '4' => 'Liter/s', '5' => 'Gallon/s', '6' => 'Quart/s'], $item->material_type, ['class' => 'form-control']) }}
+    </div>
     <div class="form-group">
         {{ Form::label('name', 'Name') }}
         {{ Form::text('name', $item->name, ['class' => 'form-control', 'required' => 'required']) }}
@@ -36,4 +40,20 @@
     {{ Form::hidden('_method', 'PUT') }}
     {{ Form::submit('Submit', ['class' => 'btn btn-primary']) }}
     {!! Form::close() !!}
+    <script>
+        $(document).ready(function () {
+            if ($('#inventory_type').find(":selected").text() > 0) {
+                $('#materialDiv').show();
+            } else {
+                $('#materialDiv').hide();
+            }
+            $('#inventory_type').on('change', function () {
+                if ($('#inventory_type').find(":selected").text() > 0) {
+                    $('#materialDiv').show();
+                } else {
+                    $('#materialDiv').hide();
+                }
+            });
+        });
+    </script>
 @endsection

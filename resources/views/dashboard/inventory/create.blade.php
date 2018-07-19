@@ -13,6 +13,19 @@
         {{ Form::label('inventory_type', 'Inventory Type') }}
         {{ Form::select('inventory_type', ['0' => 'Tools and Equipments', '1' => 'Material'], '0', ['class' => 'form-control']) }}
     </div>
+    <div class="form-group" id="materialDiv" style="display:none">
+        {{ Form::label('material_type', 'Material Type') }}
+        <select class="form-control" id="material_type">
+            <option selected disabled value="null">--- Select a material type ---</option>
+            <option value="0">Ream/s</option>
+            <option value="1">Box/es</option>
+            <option value="2">Kilogram/s</option>
+            <option value="3">Piece/s</option>
+            <option value="4">Liter/s</option>
+            <option value="5">Gallon/s</option>
+            <option value="6">Quart/s</option>
+        </select>
+    </div>
     <div class="form-group">
         {{ Form::label('name', 'Name') }}
         {{ Form::text('name', '', ['class' => 'form-control', 'required' => 'required']) }}
@@ -31,4 +44,13 @@
     </div>
     {{ Form::submit('Submit', ['class' => 'btn btn-primary']) }}
     {!! Form::close() !!}
+    <script>
+        $('#inventory_type').on('change', function () {
+            if($('#inventory_type').find(":selected").text() > 0) {
+                $('#materialDiv').show()
+            } else {
+                $('#materialDiv').hide()
+            }
+        });
+    </script>
 @endsection

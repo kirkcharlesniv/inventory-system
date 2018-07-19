@@ -25,9 +25,9 @@
                                     </div>
                                     <form>
                                         <input type="text" class="form-control" id="decrementValue" placeholder="Decrement Value" min="1" max="1">
+                                        <br>
+                                        <button id="decrement_btn" class="decrementButton btn btn-danger">Save</button>
                                     </form>
-                                    <br>
-                                    <button id="decrement_btn" class="decrementButton btn btn-danger">Save</button>
                                 </div>
                             </div>
                         </form>
@@ -40,7 +40,7 @@
 @endsection
 
 @section('card_body')
-    <a class="btn btn-success btn-block" href="home/items">Show All</a>
+    <a class="btn btn-success btn-block" href="{{ URL::to('home/items') }}">Show All</a>
     <div class="row">
         <div class="col-md-3">
             <button class="btn btn-primary btn-block" id="smaw">SMAW NC I</button>
@@ -105,6 +105,7 @@
                         <th>Stock Code</th>
                         <th>Name</th>
                         <th>Description</th>
+                        <th>Unit</th>
                         <th>Initial Stocks</th>
                         <th>Remaining Stocks</th>
                         <th>Links</th>
@@ -116,6 +117,29 @@
                                     <td>{{ $smaw->stock_code }}</td>
                                     <td>{{ $smaw->name }}</td>
                                     <td>{{ $smaw->description }}</td>
+                                    <td>@switch($smaw->material_type)
+                                            @case(0)
+                                                Ream/s
+                                                @break
+                                            @case(1)
+                                                Box/es
+                                                @break
+                                            @case(2)
+                                                Kilogram/s
+                                                @break
+                                            @case(3)
+                                                Piece/s
+                                                @break
+                                            @case(4)
+                                                Liter/s
+                                                @break
+                                            @case(5)
+                                                Gallon/s
+                                                @break
+                                            @case(6)
+                                                Quart/s
+                                                @break
+                                        @endswitch</td>
                                     <td>{{ $smaw->initial_stocks }}</td>
                                     <td>{{ $smaw->remaining_stocks }}</td>
                                     <td>
@@ -184,6 +208,7 @@
                         <th>Stock Code</th>
                         <th>Name</th>
                         <th>Description</th>
+                        <th>Unit</th>
                         <th>Initial Stocks</th>
                         <th>Remaining Stocks</th>
                         <th>Links</th>
@@ -195,6 +220,29 @@
                                     <td>{{ $pipe->stock_code }}</td>
                                     <td>{{ $pipe->name }}</td>
                                     <td>{{ $pipe->description }}</td>
+                                    <td>@switch($pipe->material_type)
+                                            @case(0)
+                                             Ream/s
+                                             @break
+                                            @case(1)
+                                             Box/es
+                                             @break
+                                            @case(2)
+                                             Kilogram/s
+                                             @break
+                                            @case(3)
+                                             Piece/s
+                                             @break
+                                            @case(4)
+                                             Liter/s
+                                             @break
+                                            @case(5)
+                                             Gallon/s
+                                             @break
+                                            @case(6)
+                                             Quart/s
+                                             @break
+                                        @endswitch</td>
                                     <td>{{ $pipe->initial_stocks }}</td>
                                     <td>{{ $pipe->remaining_stocks }}</td>
                                     <td>
@@ -263,6 +311,7 @@
                         <th>Stock Code</th>
                         <th>Name</th>
                         <th>Description</th>
+                        <th>Unit</th>
                         <th>Initial Stocks</th>
                         <th>Remaining Stocks</th>
                         <th>Links</th>
@@ -274,6 +323,29 @@
                                     <td>{{ $dress->stock_code }}</td>
                                     <td>{{ $dress->name }}</td>
                                     <td>{{ $dress->description }}</td>
+                                    <td><td>@switch($dress->material_type)
+                                            @case(0)
+                                                Ream/s
+                                                @break
+                                            @case(1)
+                                                Box/es
+                                                @break
+                                            @case(2)
+                                                Kilogram/s
+                                                @break
+                                            @case(3)
+                                                Piece/s
+                                                @break
+                                            @case(4)
+                                                Liter/s
+                                                @break
+                                            @case(5)
+                                                Gallon/s
+                                                @break
+                                            @case(6)
+                                                Quart/s
+                                                @break
+                                        @endswitch</td>
                                     <td>{{ $dress->initial_stocks }}</td>
                                     <td>{{ $dress->remaining_stocks }}</td>
                                     <td>
@@ -342,6 +414,7 @@
                         <th>Stock Code</th>
                         <th>Name</th>
                         <th>Description</th>
+                        <th>Unit</th>
                         <th>Initial Stocks</th>
                         <th>Remaining Stocks</th>
                         <th>Links</th>
@@ -353,6 +426,30 @@
                                     <td>{{ $cons->stock_code }}</td>
                                     <td>{{ $cons->name }}</td>
                                     <td>{{ $cons->description }}</td>
+                                    <td>
+                                    <td>@switch($smaw->material_type)
+                                            @case(0)
+                                                Ream/s
+                                                @break
+                                            @case(1)
+                                                Box/es
+                                                @break
+                                            @case(2)
+                                                Kilogram/s
+                                                @break
+                                            @case(3)
+                                                Piece/s
+                                                @break
+                                            @case(4)
+                                                Liter/s
+                                                @break
+                                            @case(5)
+                                                Gallon/s
+                                                @break
+                                            @case(6)
+                                                Quart/s
+                                                @break
+                                        @endswitch</td>
                                     <td>{{ $cons->initial_stocks }}</td>
                                     <td>{{ $cons->remaining_stocks }}</td>
                                     <td>
@@ -421,6 +518,7 @@
                             <th>Stock Code</th>
                             <th>Name</th>
                             <th>Description</th>
+                            <th>Unit</th>
                             <th>Initial Stocks</th>
                             <th>Remaining Stocks</th>
                             <th>Links</th>
@@ -432,6 +530,29 @@
                                         <td>{{ $office->stock_code }}</td>
                                         <td>{{ $office->name }}</td>
                                         <td>{{ $office->description }}</td>
+                                        <td><td>@switch($smaw->material_type)
+                                                @case(0)
+                                                    Ream/s
+                                                    @break
+                                                @case(1)
+                                                    Box/es
+                                                    @break
+                                                @case(2)
+                                                    Kilogram/s
+                                                    @break
+                                                @case(3)
+                                                    Piece/s
+                                                    @break
+                                                @case(4)
+                                                    Liter/s
+                                                    @break
+                                                @case(5)
+                                                    Gallon/s
+                                                    @break
+                                                @case(6)
+                                                    Quart/s
+                                                    @break
+                                            @endswitch</td>
                                         <td>{{ $office->initial_stocks }}</td>
                                         <td>{{ $office->remaining_stocks }}</td>
                                         <td>
@@ -455,9 +576,9 @@
     </div>
     <script type="text/javascript">
         $(document).ready(function () {
-            var decrement_value;
-            var item_id;
-            var max_value;
+            let decrement_value;
+            let item_id;
+            let max_value;
             $(document).on("click", ".open-editItemValueDialog", function () {
                 item_id = $(this).data('id');
                 max_value = $(this).data('max');

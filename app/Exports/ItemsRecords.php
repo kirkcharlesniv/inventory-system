@@ -21,6 +21,7 @@ class ItemsRecords implements FromCollection, WithMapping, ShouldAutoSize, WithH
         return [
             'Stock Type',
             'Item ID',
+            'Unit',
             'Stock Code',
             'Name',
             'Description',
@@ -38,6 +39,7 @@ class ItemsRecords implements FromCollection, WithMapping, ShouldAutoSize, WithH
     {
         $type = "";
         $inventory_type = "";
+        $material_type = "";
         switch ($row->stock_type) {
             case 0:
                 $type = "SMAW NC I";
@@ -63,9 +65,37 @@ class ItemsRecords implements FromCollection, WithMapping, ShouldAutoSize, WithH
                 $type = "Materials";
                 break;
         }
+        if ($inventory_type !== 1) {
+            $material_type = null;
+        } else {
+            switch ($row->material_type) {
+                case 0:
+                    $material_type = "Ream/s";
+                    break;
+                case 1:
+                    $material_type = "Box/es";
+                    break;
+                case 2:
+                    $material_type = "Kilogram/s";
+                    break;
+                case 3:
+                    $material_type = "Piece/s";
+                    break;
+                case 4:
+                    $material_type = "Liter/s";
+                    break;
+                case 5:
+                    $material_type = "Gallon/s";
+                    break;
+                case 6:
+                    $material_type = "Quart/s";
+                    break;
+            }
+        }
         return [
             $type,
             $inventory_type,
+            $material_type,
             $row->id,
             $row->stock_code,
             $row->name,
