@@ -58,15 +58,7 @@ class ItemsRecords implements FromCollection, WithMapping, ShouldAutoSize, WithH
                 $type = "Office Supply";
                 break;
         }
-        switch ($row->inventory_type) {
-            case 0:
-                $inventory_type = "Tools and Equipments";
-                break;
-            case 1:
-                $inventory_type = "Materials";
-                break;
-        }
-        if ($row->inventory_type !== 0) {
+        if ($row->inventory_type === 1) {
             switch ($row->material_unit) {
                 case 0:
                     $material_unit = "Ream/s";
@@ -93,6 +85,15 @@ class ItemsRecords implements FromCollection, WithMapping, ShouldAutoSize, WithH
         } else {
             $material_unit = "N/A";
         }
+        switch ($row->inventory_type) {
+            case 0:
+                $inventory_type = "Tools and Equipments";
+                break;
+            case 1:
+                $inventory_type = "Materials";
+                break;
+        }
+
         return [
             $type,
             $inventory_type,
