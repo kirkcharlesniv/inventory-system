@@ -16,6 +16,7 @@
     <div class="form-group" id="materialDiv">
         {{ Form::label('material_unit', 'Material Type') }}
         <select class="form-control" id="material_unit" name="material_unit">
+            <option selected value="default">--- Select a Material Unit (Ignore if Tools & Equipments) ---</option>
             <option value="0">Ream/s</option>
             <option value="1">Box/es</option>
             <option value="2">Kilogram/s</option>
