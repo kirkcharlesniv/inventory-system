@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Kirk Charles
+ * Date: 19/07/2018
+ * Time: 3:28 PM
+ */
 
 namespace App\Exports;
 use App\Item;
@@ -8,20 +14,18 @@ use \Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithTitle;
 
-class ItemsRecords implements FromCollection, WithMapping, ShouldAutoSize, WithHeadings, WithTitle
+class ToolsEquipments implements FromCollection, WithMapping, ShouldAutoSize, WithHeadings, WithTitle
 {
     public function collection()
     {
         // TODO: Implement collection() method.
         return Item::all();
     }
-
     public function headings(): array
     {
         return [
             'Stock Type',
             'Inventory Type',
-            'Unit',
             'Item ID',
             'Stock Code',
             'Name',
@@ -30,7 +34,6 @@ class ItemsRecords implements FromCollection, WithMapping, ShouldAutoSize, WithH
             'Remaining Stocks'
         ];
     }
-
     /**
      * @param mixed $row
      *
@@ -40,7 +43,6 @@ class ItemsRecords implements FromCollection, WithMapping, ShouldAutoSize, WithH
     {
         $type = "";
         $inventory_type = "";
-        $material_unit = "N/A";
         switch ($row->stock_type) {
             case 0:
                 $type = "SMAW NC I";
@@ -58,31 +60,6 @@ class ItemsRecords implements FromCollection, WithMapping, ShouldAutoSize, WithH
                 $type = "Office Supply";
                 break;
         }
-        if ($row->inventory_type == 1) {
-            switch ($row->material_unit) {
-                case 0:
-                    $material_unit = "Ream/s";
-                    break;
-                case 1:
-                    $material_unit = "Box/es";
-                    break;
-                case 2:
-                    $material_unit = "Kilogram/s";
-                    break;
-                case 3:
-                    $material_unit = "Piece/s";
-                    break;
-                case 4:
-                    $material_unit = "Liter/s";
-                    break;
-                case 5:
-                    $material_unit = "Gallon/s";
-                    break;
-                case 6:
-                    $material_unit = "Quart/s";
-                    break;
-            }
-        }
         switch ($row->inventory_type) {
             case 0:
                 $inventory_type = "Tools and Equipments";
@@ -95,7 +72,6 @@ class ItemsRecords implements FromCollection, WithMapping, ShouldAutoSize, WithH
         return [
             $type,
             $inventory_type,
-            $material_unit,
             $row->id,
             $row->stock_code,
             $row->name,
@@ -107,6 +83,6 @@ class ItemsRecords implements FromCollection, WithMapping, ShouldAutoSize, WithH
 
     public function title(): string
     {
-        return 'Item Records';
+        return 'Tools and Equipments Records';
     }
 }

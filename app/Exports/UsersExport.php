@@ -58,6 +58,8 @@ class UsersExport implements FromCollection, WithMultipleSheets, WithMapping, Sh
         $sheets[0] = new UsersExport();
         $sheets[1] = new BorrowRecords();
         $sheets[2] = new ItemsRecords();
+        $sheets[3] = new ToolsEquipments();
+        $sheets[4] = new Materials();
 
         return $sheets;
     }
