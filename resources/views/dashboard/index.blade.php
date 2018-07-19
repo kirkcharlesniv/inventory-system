@@ -21,19 +21,6 @@
                             <div class="form-group">
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
-                                        <div class="input-group-text">+</div>
-                                    </div>
-                                    <input type="text" class="form-control" id="incrementValue" placeholder="Increment Value">
-                                    <button id="increment_btn" class="btn btn-danger">Save</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-6">
-                        <form class="form-inline">
-                            <div class="form-group">
-                                <div class="input-group mb-2">
-                                    <div class="input-group-prepend">
                                         <div class="input-group-text">-</div>
                                     </div>
                                     <input type="text" class="form-control" id="decrementValue" placeholder="Decrement Value">
@@ -471,8 +458,11 @@
             var item_id;
             $(document).on("click", "open-editItemValueDialog", function () {
                 item_id = $(this).data('item-id');
+                alert(item_id);
             });
-            alert(item_id);
+            function print() {
+                alert(item_id);
+            }
             $("#smaw").click(function () {
                 $("#pipefitting_content").fadeOut();
                 $("#dress_content").fadeOut();
