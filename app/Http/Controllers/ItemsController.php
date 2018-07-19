@@ -146,11 +146,10 @@ class ItemsController extends Controller
         {
             $id = (int) $request->id;
             $value = (int) $request->value;
-            if(DB::table('item_records')->where('id', $id)->decrement('remaining_stocks', $value)){
-                return "success";
-            } else {
-                return false;
-            }
+            $query = DB::table('item_records')->where('id', $id);
+            $query->decrement('remaining_stocks', $value);
+
+            return "success";
         }
     }
 }
