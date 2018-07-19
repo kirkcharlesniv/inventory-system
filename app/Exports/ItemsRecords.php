@@ -66,7 +66,7 @@ class ItemsRecords implements FromCollection, WithMapping, ShouldAutoSize, WithH
                 $inventory_type = "Materials";
                 break;
         }
-        if ($inventory_type !== 0) {
+        if ($row->inventory_type !== 0) {
             switch ($row->material_unit) {
                 case 0:
                     $material_unit = "Ream/s";
