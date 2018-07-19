@@ -16,15 +16,14 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <form class="form-inline">
                             <div class="form-group">
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">-</div>
                                     </div>
-                                    <input type="text" class="form-control" id="decrementValue" placeholder="Decrement Value">
-                                    <button id="decrement_btn" class="btn btn-danger">Save</button>
+                                    <input type="text" class="form-control" id="decrementValue" placeholder="Decrement Value" min="1">
                                 </div>
                             </div>
                         </form>
@@ -32,7 +31,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="decrement_btn" class="decrementButton btn btn-danger">Save</button>
             </div>
         </div>
     </div>
@@ -121,7 +120,7 @@
                                     <td>
                                         <a class="btn btn-primary" href="home/items/{{$smaw->id}}">Show/Delete</a>
                                         <br><br>
-                                        <button type="button" class="open-editItemValueDialog btn btn-primary" data-item-id="{{$smaw->id}}" data-toggle="modal" data-target="#editItemValue">
+                                        <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$smaw->id}}" data-toggle="modal" data-target="#editItemValue">
                                             Edit
                                         </button>
                                     </td>
@@ -200,7 +199,7 @@
                                         <a class="btn btn-primary" href="home/items/{{$pipe->id}}">Show/Delete</a>
                                         <br><br>
                                         <a class="btn btn-warning" href="home/items/{{$pipe->id}}/edit">Edit</a>
-                                        <button type="button" class="open-editItemValueDialog btn btn-primary" data-item-id="{{$pipe->id}}" data-toggle="modal" data-target="#editItemValue">
+                                        <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$pipe->id}}" data-toggle="modal" data-target="#editItemValue">
                                             Edit
                                         </button>
                                     </td>
@@ -279,7 +278,7 @@
                                         <a class="btn btn-primary" href="home/items/{{$dress->id}}">Show/Delete</a>
                                         <br><br>
                                         <a class="btn btn-warning" href="home/items/{{$dress->id}}/edit">Edit</a>
-                                        <button type="button" class="open-editItemValueDialog btn btn-primary" data-item-id="{{$dress->id}}" data-toggle="modal" data-target="#editItemValue">
+                                        <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$dress->id}}" data-toggle="modal" data-target="#editItemValue">
                                             Edit
                                         </button>
                                     </td>
@@ -358,7 +357,7 @@
                                         <a class="btn btn-primary" href="home/items/{{$cons->id}}">Show/Delete</a>
                                         <br><br>
                                         <a class="btn btn-warning" href="home/items/{{$cons->id}}/edit">Edit</a>
-                                        <button type="button" class="open-editItemValueDialog btn btn-primary" data-item-id="{{$cons->id}}" data-toggle="modal" data-target="#editItemValue">
+                                        <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$cons->id}}" data-toggle="modal" data-target="#editItemValue">
                                             Edit
                                         </button>
                                     </td>
@@ -437,7 +436,7 @@
                                             <a class="btn btn-primary" href="home/items/{{$office->id}}">Show/Delete</a>
                                             <br><br>
                                             <a class="btn btn-warning" href="home/items/{{$office->id}}/edit">Edit</a>
-                                            <button type="button" class="open-editItemValueDialog btn btn-primary" data-item-id="{{$office->id}}" data-toggle="modal" data-target="#editItemValue">
+                                            <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$office->id}}" data-toggle="modal" data-target="#editItemValue">
                                                 Edit
                                             </button>
                                         </td>
@@ -456,12 +455,19 @@
         $(document).ready(function () {
             var decrement_value;
             var item_id;
-            $(document).on("click", "open-editItemValueDialog", function () {
-                item_id = $(this).data('item-id');
-                alert(item_id);
+            var REQUEST_URL;
+            $(document).on("click", ".open-editItemValueDialog", function () {
+                item_id = $(this).data('id');
+                console.log(item_id);
             });
-            function print() {
-                alert(item_id);
+            $(document).on("click", ".decrementButton", function () {
+                decrement_value = $('#decrementValue').val();
+                REQUEST_URL = 'home/decrement/'+item_id+'/'+decrement_value;
+                console.log(REQUEST_URL);
+            });
+            function print_vars() {
+                console.log(item_id);
+                console.log(decrement_value);
             }
             $("#smaw").click(function () {
                 $("#pipefitting_content").fadeOut();
