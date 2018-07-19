@@ -625,8 +625,8 @@
             var item_id;
             var max_value;
             $(document).on("click", ".open-editItemValueDialog", function () {
-                item_id = $(this).data('id').trim();
-                max_value = $(this).data('max').trim();
+                item_id = $(this).data('id').replace(/\s/g,'');
+                max_value = $(this).data('max').replace(/\s/g,'');
             });
             $(document).on("click", ".decrementButton", function () {
                 decrement_value = $('#decrementValue').val();
