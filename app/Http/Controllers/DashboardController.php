@@ -48,11 +48,4 @@ class DashboardController extends Controller
         $filename = 'Report ('.date('d-m-Y h:iA').').xlsx';
         return Excel::download(new UsersExport, $filename);
     }
-
-    public function decrement($id)
-    {
-        DB::table('item_records')->where('id', $id)->decrement('remaining_stocks', 1);
-
-        return redirect('/home')->with('success', 'Entry has been decremented.');
-    }
 }

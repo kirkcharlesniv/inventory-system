@@ -120,8 +120,9 @@
                                     <td>
                                         <a class="btn btn-primary" href="home/items/{{$smaw->id}}">Show/Delete</a>
                                         <br><br>
-                                        <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$smaw->id}}" data-toggle="modal" data-target="#editItemValue">
-                                            Edit
+                                        <a class="btn btn-success" href="home/items/{{$smaw->id}}/edit">Increment</a>
+                                        <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$smaw->id}}" data-max="{{abs($smaw->initial_stocks - $smaw->remaining_stocks)}}" data-toggle="modal" data-target="#editItemValue">
+                                            Decrement
                                         </button>
                                     </td>
                                 </tr>
@@ -198,9 +199,9 @@
                                     <td>
                                         <a class="btn btn-primary" href="home/items/{{$pipe->id}}">Show/Delete</a>
                                         <br><br>
-                                        <a class="btn btn-warning" href="home/items/{{$pipe->id}}/edit">Edit</a>
-                                        <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$pipe->id}}" data-toggle="modal" data-target="#editItemValue">
-                                            Edit
+                                        <a class="btn btn-success" href="home/items/{{$pipe->id}}/edit">Increment</a>
+                                        <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$pipe->id}}" data-max="{{abs($pipe->initial_stocks - $pipe->remaining_stocks)}}" data-toggle="modal" data-target="#editItemValue">
+                                            Decrement
                                         </button>
                                     </td>
                                 </tr>
@@ -277,9 +278,9 @@
                                     <td>
                                         <a class="btn btn-primary" href="home/items/{{$dress->id}}">Show/Delete</a>
                                         <br><br>
-                                        <a class="btn btn-warning" href="home/items/{{$dress->id}}/edit">Edit</a>
-                                        <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$dress->id}}" data-toggle="modal" data-target="#editItemValue">
-                                            Edit
+                                        <a class="btn btn-success" href="home/items/{{$dress->id}}/edit">Increment</a>
+                                        <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$dress->id}}" data-max="{{abs($dress->initial_stocks - $dress->remaining_stocks)}}" data-toggle="modal" data-target="#editItemValue">
+                                            Decrement
                                         </button>
                                     </td>
                                 </tr>
@@ -356,9 +357,9 @@
                                     <td>
                                         <a class="btn btn-primary" href="home/items/{{$cons->id}}">Show/Delete</a>
                                         <br><br>
-                                        <a class="btn btn-warning" href="home/items/{{$cons->id}}/edit">Edit</a>
-                                        <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$cons->id}}" data-toggle="modal" data-target="#editItemValue">
-                                            Edit
+                                        <a class="btn btn-success" href="home/items/{{$smaw->id}}/edit">Increment</a>
+                                        <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$cons->id}}" data-max="{{abs($cons->initial_stocks - $cons->remaining_stocks)}}" data-toggle="modal" data-target="#editItemValue">
+                                            Decrement
                                         </button>
                                     </td>
                                 </tr>
@@ -435,9 +436,9 @@
                                         <td>
                                             <a class="btn btn-primary" href="home/items/{{$office->id}}">Show/Delete</a>
                                             <br><br>
-                                            <a class="btn btn-warning" href="home/items/{{$office->id}}/edit">Edit</a>
-                                            <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$office->id}}" data-toggle="modal" data-target="#editItemValue">
-                                                Edit
+                                            <a class="btn btn-success" href="home/items/{{$smaw->id}}/edit">Increment</a>
+                                            <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$office->id}}" data-max="{{abs($office->initial_stocks - $office->remaining_stocks)}}" data-toggle="modal" data-target="#editItemValue">
+                                                Decrement
                                             </button>
                                         </td>
                                     </tr>
@@ -455,15 +456,22 @@
         $(document).ready(function () {
             var decrement_value;
             var item_id;
-            var REQUEST_URL;
+            var max_value;
             $(document).on("click", ".open-editItemValueDialog", function () {
                 item_id = $(this).data('id');
-                console.log(item_id);
+                max_value = $(this).data('max');
             });
             $(document).on("click", ".decrementButton", function () {
                 decrement_value = $('#decrementValue').val();
-                REQUEST_URL = 'home/decrement/'+item_id+'/'+decrement_value;
-                console.log(REQUEST_URL);
+                $("#decrementValue").attr("max", max_value);
+                $.ajax({
+                    type : 'post',
+                    url : '{{URL::to('home/items/decrement')}}',
+                    data: {'id': item_id, 'value': decrement_value},
+                    success: function() {
+                        location.reload();
+                    }
+                });
             });
             function print_vars() {
                 console.log(item_id);
@@ -525,5 +533,8 @@
                 }, 800
             );
         });
+    </script>
+    <script type="text/javascript">
+        $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
     </script>
 @endsection

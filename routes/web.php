@@ -29,7 +29,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('home/borrow', 'BorrowsController');
     Route::resource('home/items', 'ItemsController');
 
-    Route::get('home/items/decrement/{id}', ['uses' =>'DashboardController@decrement'])->name('decrement');
+    Route::get('home/items/decrement', 'ItemsController@decrement')->name('decrement');
 
     Route::get('home/export', 'DashboardController@download');
 });

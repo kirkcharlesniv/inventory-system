@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Item;
+use Illuminate\Support\Facades\DB;
 
 class ItemsController extends Controller
 {
@@ -139,10 +140,15 @@ class ItemsController extends Controller
         return redirect('/home/items')->with('success', 'Entry has been deleted.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    public function decrement(Request $request)
+    {
+        if($request->ajax())
+        {
+            if(DB::table('item_records')->where('id', $request->id)->decrement('remaining_stocks', $request->value)){
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
 }
