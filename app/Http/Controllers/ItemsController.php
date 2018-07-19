@@ -144,7 +144,9 @@ class ItemsController extends Controller
     {
         if($request->ajax())
         {
-            if(DB::table('item_records')->where('id', $request->id)->decrement('remaining_stocks', $request->value)){
+            $id = (int) $request->id;
+            $value = (int) $request->value;
+            if(DB::table('item_records')->where('id', $id)->decrement('remaining_stocks', $value)){
                 return "success";
             } else {
                 return false;
