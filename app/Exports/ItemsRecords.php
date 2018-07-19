@@ -39,7 +39,7 @@ class ItemsRecords implements FromCollection, WithMapping, ShouldAutoSize, WithH
     {
         $type = "";
         $inventory_type = "";
-        $material_type = "";
+        $material_unit = "";
         switch ($row->stock_type) {
             case 0:
                 $type = "SMAW NC I";
@@ -66,36 +66,36 @@ class ItemsRecords implements FromCollection, WithMapping, ShouldAutoSize, WithH
                 break;
         }
         if ($inventory_type !== 1) {
-            $material_type = null;
+            $material_unit = null;
         } else {
-            switch ($row->material_type) {
+            switch ($row->material_unit) {
                 case 0:
-                    $material_type = "Ream/s";
+                    $material_unit = "Ream/s";
                     break;
                 case 1:
-                    $material_type = "Box/es";
+                    $material_unit = "Box/es";
                     break;
                 case 2:
-                    $material_type = "Kilogram/s";
+                    $material_unit = "Kilogram/s";
                     break;
                 case 3:
-                    $material_type = "Piece/s";
+                    $material_unit = "Piece/s";
                     break;
                 case 4:
-                    $material_type = "Liter/s";
+                    $material_unit = "Liter/s";
                     break;
                 case 5:
-                    $material_type = "Gallon/s";
+                    $material_unit = "Gallon/s";
                     break;
                 case 6:
-                    $material_type = "Quart/s";
+                    $material_unit = "Quart/s";
                     break;
             }
         }
         return [
             $type,
             $inventory_type,
-            $material_type,
+            $material_unit,
             $row->id,
             $row->stock_code,
             $row->name,

@@ -117,7 +117,7 @@
                                     <td>{{ $smaw->stock_code }}</td>
                                     <td>{{ $smaw->name }}</td>
                                     <td>{{ $smaw->description }}</td>
-                                    <td>@switch($smaw->material_type)
+                                    <td>@switch($smaw->material_unit)
                                             @case(0)
                                                 Ream/s
                                                 @break
@@ -220,7 +220,7 @@
                                     <td>{{ $pipe->stock_code }}</td>
                                     <td>{{ $pipe->name }}</td>
                                     <td>{{ $pipe->description }}</td>
-                                    <td>@switch($pipe->material_type)
+                                    <td>@switch($pipe->material_unit)
                                             @case(0)
                                              Ream/s
                                              @break
@@ -323,7 +323,7 @@
                                     <td>{{ $dress->stock_code }}</td>
                                     <td>{{ $dress->name }}</td>
                                     <td>{{ $dress->description }}</td>
-                                    <td><td>@switch($dress->material_type)
+                                    <td><td>@switch($dress->material_unit)
                                             @case(0)
                                                 Ream/s
                                                 @break
@@ -427,7 +427,7 @@
                                     <td>{{ $cons->name }}</td>
                                     <td>{{ $cons->description }}</td>
                                     <td>
-                                    <td>@switch($smaw->material_type)
+                                    <td>@switch($smaw->material_unit)
                                             @case(0)
                                                 Ream/s
                                                 @break
@@ -530,7 +530,7 @@
                                         <td>{{ $office->stock_code }}</td>
                                         <td>{{ $office->name }}</td>
                                         <td>{{ $office->description }}</td>
-                                        <td><td>@switch($smaw->material_type)
+                                        <td><td>@switch($smaw->material_unit)
                                                 @case(0)
                                                     Ream/s
                                                     @break

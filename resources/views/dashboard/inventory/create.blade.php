@@ -14,8 +14,8 @@
         {{ Form::select('inventory_type', ['0' => 'Tools and Equipments', '1' => 'Material'], '0', ['class' => 'form-control']) }}
     </div>
     <div class="form-group" id="materialDiv" style="display:none">
-        {{ Form::label('material_type', 'Material Type') }}
-        <select class="form-control" id="material_type">
+        {{ Form::label('material_unit', 'Material Type') }}
+        <select class="form-control" id="material_unit">
             <option selected disabled value="null">--- Select a material type ---</option>
             <option value="0">Ream/s</option>
             <option value="1">Box/es</option>
