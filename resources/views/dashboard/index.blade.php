@@ -576,9 +576,9 @@
     </div>
     <script type="text/javascript">
         $(document).ready(function () {
-            let decrement_value;
-            let item_id;
-            let max_value;
+            var decrement_value;
+            var item_id;
+            var max_value;
             $(document).on("click", ".open-editItemValueDialog", function () {
                 item_id = $(this).data('id');
                 max_value = $(this).data('max');
@@ -587,6 +587,7 @@
                 decrement_value = $('#decrementValue').val();
                 if (decrement_value > max_value) {
                     alert('You shouldn\'t go higher than ' + max_value + '.');
+                    console.log(max_value);
                 } else {
                     $.ajax({
                         type : 'get',
