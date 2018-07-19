@@ -3,6 +3,55 @@
 @section('page_title', 'Dashboard')
 
 @section('card_title', "Dashboard")
+
+@section('custom_content_top')
+<div class="modal fade" id="editItemValue" tabindex="-1" role="dialog" aria-labelledby="editItemValueCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editItemValueLongTitle">Increment/Decrement Value</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">+</div>
+                                    </div>
+                                    <input type="text" class="form-control" id="incrementValue" placeholder="Increment Value">
+                                    <button id="increment_btn" class="btn btn-danger">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">-</div>
+                                    </div>
+                                    <input type="text" class="form-control" id="decrementValue" placeholder="Decrement Value">
+                                    <button id="decrement_btn" class="btn btn-danger">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
 @section('card_body')
     <a class="btn btn-success btn-block" href="home/items">Show All</a>
     <div class="row">
@@ -52,7 +101,6 @@
                                     <td>
                                         <a class="btn btn-primary" href="home/items/{{$smaw->id}}">Show/Edit</a>
                                         <a class="btn btn-primary" href="home/items/{{$smaw->id}}/edit">Edit</a>
-                                        <br><br>
                                     </td>
                                 </tr>
                             @endforeach
@@ -86,8 +134,9 @@
                                     <td>
                                         <a class="btn btn-primary" href="home/items/{{$smaw->id}}">Show/Delete</a>
                                         <br><br>
-                                        <a class="btn btn-warning" href="home/items/{{$smaw->id}}/edit">Edit</a>
-                                        <a class="btn btn-danger" href="home/items/decrement/{{$smaw->id}}">-</a>
+                                        <button type="button" class="open-editItemValueDialog btn btn-primary" data-item-id="{{$smaw->id}}" data-toggle="modal" data-target="#editItemValue">
+                                            Edit
+                                        </button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -164,7 +213,9 @@
                                         <a class="btn btn-primary" href="home/items/{{$pipe->id}}">Show/Delete</a>
                                         <br><br>
                                         <a class="btn btn-warning" href="home/items/{{$pipe->id}}/edit">Edit</a>
-                                        <a class="btn btn-danger" href="home/items/decrement/{{$pipe->id}}">-</a>
+                                        <button type="button" class="open-editItemValueDialog btn btn-primary" data-item-id="{{$pipe->id}}" data-toggle="modal" data-target="#editItemValue">
+                                            Edit
+                                        </button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -241,7 +292,9 @@
                                         <a class="btn btn-primary" href="home/items/{{$dress->id}}">Show/Delete</a>
                                         <br><br>
                                         <a class="btn btn-warning" href="home/items/{{$dress->id}}/edit">Edit</a>
-                                        <a class="btn btn-danger" href="home/items/decrement/{{$dress->id}}">-</a>
+                                        <button type="button" class="open-editItemValueDialog btn btn-primary" data-item-id="{{$dress->id}}" data-toggle="modal" data-target="#editItemValue">
+                                            Edit
+                                        </button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -318,7 +371,9 @@
                                         <a class="btn btn-primary" href="home/items/{{$cons->id}}">Show/Delete</a>
                                         <br><br>
                                         <a class="btn btn-warning" href="home/items/{{$cons->id}}/edit">Edit</a>
-                                        <a class="btn btn-danger" href="home/items/decrement/{{$cons->id}}">-</a>
+                                        <button type="button" class="open-editItemValueDialog btn btn-primary" data-item-id="{{$cons->id}}" data-toggle="modal" data-target="#editItemValue">
+                                            Edit
+                                        </button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -395,7 +450,9 @@
                                             <a class="btn btn-primary" href="home/items/{{$office->id}}">Show/Delete</a>
                                             <br><br>
                                             <a class="btn btn-warning" href="home/items/{{$office->id}}/edit">Edit</a>
-                                            <a class="btn btn-danger" href="home/items/decrement/{{$office->id}}">-</a>
+                                            <button type="button" class="open-editItemValueDialog btn btn-primary" data-item-id="{{$office->id}}" data-toggle="modal" data-target="#editItemValue">
+                                                Edit
+                                            </button>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -410,6 +467,12 @@
     </div>
     <script type="text/javascript">
         $(document).ready(function () {
+            var decrement_value;
+            var item_id;
+            $(document).on("click", "open-editItemValueDialog", function () {
+                item_id = $(this).data('item-id');
+            });
+            alert(item_id);
             $("#smaw").click(function () {
                 $("#pipefitting_content").fadeOut();
                 $("#dress_content").fadeOut();
