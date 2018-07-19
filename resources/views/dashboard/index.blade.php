@@ -86,7 +86,7 @@
                                     <td>{{ $smaw->initial_stocks }}</td>
                                     <td>{{ $smaw->remaining_stocks }}</td>
                                     <td>
-                                        <a class="btn btn-primary" href="home/items/{{$smaw->id}}">Show/Edit</a>
+                                        <a class="btn btn-primary" href="home/items/{{$smaw->id}}">Show/Delete</a>
                                         <a class="btn btn-primary" href="home/items/{{$smaw->id}}/edit">Edit</a>
                                     </td>
                                 </tr>
