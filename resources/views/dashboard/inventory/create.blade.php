@@ -13,10 +13,10 @@
         {{ Form::label('inventory_type', 'Inventory Type') }}
         {{ Form::select('inventory_type', ['0' => 'Tools and Equipments', '1' => 'Material'], '0', ['class' => 'form-control']) }}
     </div>
-    <div class="form-group" id="materialDiv" style="display:none">
+    <div class="form-group" id="materialDiv">
         {{ Form::label('material_unit', 'Material Type') }}
         <select class="form-control" id="material_unit">
-            <option selected disabled value="null">--- Select a material type ---</option>
+            <option selected disabled value="null">--- Select a Material Unit (Ignore if Tools & Materials)---</option>
             <option value="0">Ream/s</option>
             <option value="1">Box/es</option>
             <option value="2">Kilogram/s</option>
@@ -44,13 +44,4 @@
     </div>
     {{ Form::submit('Submit', ['class' => 'btn btn-primary']) }}
     {!! Form::close() !!}
-    <script>
-        $('#inventory_type').on('change', function () {
-            if($('#inventory_type').find(":selected").text() > 0) {
-                $('#materialDiv').show()
-            } else {
-                $('#materialDiv').hide()
-            }
-        });
-    </script>
 @endsection
