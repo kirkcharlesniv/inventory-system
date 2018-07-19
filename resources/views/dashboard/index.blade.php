@@ -627,12 +627,12 @@
             $(document).on("click", ".open-editItemValueDialog", function () {
                 item_id = $(this).data('id');
                 max_value = $(this).data('max').toString().replace(/\s/g,'');
+                max_value = parseInt(max_value);
             });
             $(document).on("click", ".decrementButton", function () {
-                decrement_value = $('#decrementValue').val();
+                decrement_value = $('#decrementValue').val().toString();
                 if (decrement_value > max_value && max_value !== 0) {
                     alert('You shouldn\'t go higher than ' + max_value + '.');
-                    console.log(max_value);
                 } else {
                     $.ajax({
                         type : 'get',
