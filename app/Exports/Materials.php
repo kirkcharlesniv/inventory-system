@@ -12,10 +12,11 @@ use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
 use \Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
+use Maatwebsite\Excel\Concerns\WithStrictNullComparison;
 use Maatwebsite\Excel\Concerns\WithTitle;
 
 
-class Materials implements FromCollection, WithMapping, ShouldAutoSize, WithHeadings, WithTitle
+class Materials implements FromCollection, WithMapping, ShouldAutoSize, WithHeadings, WithTitle, WithStrictNullComparison
 {
     public function collection()
     {
@@ -26,7 +27,6 @@ class Materials implements FromCollection, WithMapping, ShouldAutoSize, WithHead
     {
         return [
             'Stock Type',
-            'Inventory Type',
             'Unit',
             'Item ID',
             'Stock Code',
@@ -44,7 +44,6 @@ class Materials implements FromCollection, WithMapping, ShouldAutoSize, WithHead
     public function map($row): array
     {
         $type = "";
-        $inventory_type = "";
         $material_unit = "";
         switch ($row->stock_type) {
             case 0:
