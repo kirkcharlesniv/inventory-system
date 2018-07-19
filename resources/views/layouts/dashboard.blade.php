@@ -14,14 +14,6 @@
 
         <link href="{{ asset('assets/demo/demo.css') }}" rel="stylesheet" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-        <style>
-            th {
-                font-size: 1.25em;
-            }
-            td {
-                font-size: 11.5px;
-            }
-        </style>
     </head>
 
     <body>

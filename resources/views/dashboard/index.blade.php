@@ -441,7 +441,6 @@
                                     <td>{{ $cons->stock_code }}</td>
                                     <td>{{ $cons->name }}</td>
                                     <td>{{ $cons->description }}</td>
-                                    <td>
                                     <td>@switch($smaw->material_unit)
                                             @case(0)
                                                 Ream/s
