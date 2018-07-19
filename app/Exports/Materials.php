@@ -20,7 +20,7 @@ class Materials implements FromCollection, WithMapping, ShouldAutoSize, WithHead
     public function collection()
     {
         // TODO: Implement collection() method.
-        return Item::all();
+        return Item::where('inventory_type', '1')->orderBy('stock_code', 'asc')->get();
     }
     public function headings(): array
     {
@@ -86,18 +86,9 @@ class Materials implements FromCollection, WithMapping, ShouldAutoSize, WithHead
                 $material_unit = "Quart/s";
                 break;
         }
-        switch ($row->inventory_type) {
-            case 0:
-                $inventory_type = "Tools and Equipments";
-                break;
-            case 1:
-                $inventory_type = "Materials";
-                break;
-        }
 
         return [
             $type,
-            $inventory_type,
             $material_unit,
             $row->id,
             $row->stock_code,

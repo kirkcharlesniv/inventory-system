@@ -19,13 +19,12 @@ class ToolsEquipments implements FromCollection, WithMapping, ShouldAutoSize, Wi
     public function collection()
     {
         // TODO: Implement collection() method.
-        return Item::all();
+        return Item::where('inventory_type', '0')->orderBy('stock_code', 'asc')->get();
     }
     public function headings(): array
     {
         return [
             'Stock Type',
-            'Inventory Type',
             'Item ID',
             'Stock Code',
             'Name',
@@ -60,18 +59,9 @@ class ToolsEquipments implements FromCollection, WithMapping, ShouldAutoSize, Wi
                 $type = "Office Supply";
                 break;
         }
-        switch ($row->inventory_type) {
-            case 0:
-                $inventory_type = "Tools and Equipments";
-                break;
-            case 1:
-                $inventory_type = "Materials";
-                break;
-        }
 
         return [
             $type,
-            $inventory_type,
             $row->id,
             $row->stock_code,
             $row->name,

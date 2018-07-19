@@ -14,7 +14,7 @@ class BorrowRecords implements FromCollection, WithMapping, ShouldAutoSize, With
     public function collection()
     {
         // TODO: Implement collection() method.
-        return Borrow::all();
+        return Borrow::orderBy('status', 'desc')->get();
     }
 
     public function headings(): array
@@ -38,6 +38,11 @@ class BorrowRecords implements FromCollection, WithMapping, ShouldAutoSize, With
      */
     public function map($row): array
     {
+        if($row->status) {
+            $row->status = "CLEARED";
+        } else {
+            $row->status = "NOT CLEARED";
+        }
         return [
             $row->item_id,
             $row->user_id,

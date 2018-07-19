@@ -14,7 +14,7 @@ class UsersExport implements FromCollection, WithMultipleSheets, WithMapping, Sh
     public function collection()
     {
         // TODO: Implement collection() method.
-        return Employee::all();
+        return Employee::orderBy('id_num', 'asc')->get();
     }
 
     public function headings(): array
