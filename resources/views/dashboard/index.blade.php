@@ -441,7 +441,7 @@
                                     <td>{{ $cons->stock_code }}</td>
                                     <td>{{ $cons->name }}</td>
                                     <td>{{ $cons->description }}</td>
-                                    <td>@switch($smaw->material_unit)
+                                    <td>@switch($cons->material_unit)
                                             @case(0)
                                                 Ream/s
                                                 @break
@@ -548,7 +548,7 @@
                                         <td>{{ $office->stock_code }}</td>
                                         <td>{{ $office->name }}</td>
                                         <td>{{ $office->description }}</td>
-                                        <td><td>@switch($smaw->material_unit)
+                                        <td><td>@switch($office->material_unit)
                                                 @case(0)
                                                     Ream/s
                                                     @break
