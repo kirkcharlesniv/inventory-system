@@ -465,7 +465,7 @@
                 decrement_value = $('#decrementValue').val();
                 $("#decrementValue").attr("max", max_value);
                 $.ajax({
-                    type : 'post',
+                    type : 'get',
                     url : '{{URL::to('home/items/decrement')}}',
                     data: {'id': item_id, 'value': decrement_value},
                     success: function() {
