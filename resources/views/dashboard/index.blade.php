@@ -586,7 +586,7 @@
                                         <td>{{ $office->stock_code }}</td>
                                         <td>{{ $office->name }}</td>
                                         <td>{{ $office->description }}</td>
-                                        <td><td>@switch($office->material_unit)
+                                        <td>@switch($office->material_unit)
                                                 @case(0)
                                                 Ream/s
                                                 @break
