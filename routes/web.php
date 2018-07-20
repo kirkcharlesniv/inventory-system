@@ -16,7 +16,9 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+Route::get('/register', function () {
+    abort(403, 'Register is currently disabled.');
+});
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('home', 'DashboardController@index')->name('home');
