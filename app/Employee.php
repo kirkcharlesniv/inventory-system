@@ -4,6 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property string id_num
+ */
 class Employee extends Model
 {
     protected $table = 'employees';

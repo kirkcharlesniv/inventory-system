@@ -140,17 +140,27 @@ class ItemsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy($id)
     {
         $item = Item::find($id);
         $item->delete();
 
+        if (DB::table('borrow_records')->where('item_id', $id)->count() > 0) {
+            DB::table('borrow_records')->where('item_id', $id)->delete();
+        }
+
         return redirect('/home/items')->with('success', 'Entry has been deleted.');
     }
 
+    /**
+     * Custom functions
+     * @param Request $request
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
+     */
     public function decrement(Request $request)
     {
         if($request->ajax())

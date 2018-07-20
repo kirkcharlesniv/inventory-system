@@ -18,71 +18,6 @@ class BorrowsController extends Controller
         return view('dashboard.borrow.index');
     }
 
-    public function search(Request $request)
-    {
-        if($request->ajax())
-        {
-            $output = "";
-            $items = DB::table('item_records')->where('name', 'LIKE', '%'.$request->search.'%')->where('remaining_stocks', '>', '0')->get();
-            if($items)
-            {
-                foreach($items as $item) {
-                    $output .= '<option value="'.$item->id.'">'.$item->name.' | Remaining Stocks ('.$item->remaining_stocks.')</option>';
-                }
-                return Response($output);
-            }
-        }
-    }
-
-    public function employeerecords(Request $request)
-    {
-        if($request->ajax())
-        {
-            $output = "";
-            $items = DB::table('borrow_records')->where('user_id', 'LIKE', '%'.$request->name_selection.'%')->get();
-            if($items)
-            {
-                foreach($items as $item) {
-                    $item_stats = DB::table('item_records')->where('id', '=', $item->item_id)->get(['name', 'stock_code']);
-                    $status = '';
-                    if($item->status > 0) {
-                        $status = '(Cleared)';
-                    }
-                    $output.='<tr>'.
-                        '<td>'.$item_stats[0]->name.' '.$status.'</td>'.
-                        '<td>'.$item_stats[0]->stock_code.'</td>'.
-                        '<td>'.$item->borrowed.'</td>'.
-                        '<td>'.$item->returned.'</td>'.
-                        '<td>'.$item->created_at.'</td>'.
-                        '<td>'.$item->updated_at.'</td>'.
-                        '<td>
-                            <a href="borrow/'.$item->borrow_id.'/edit" class="btn btn-primary">Edit</a>
-                            <a href="borrow/'.$item->borrow_id.'" class="btn btn-primary">Record</a>
-                        </td>'.
-
-                        '</tr>';
-                }
-                return Response($output);
-            }
-        }
-    }
-
-    public function employeenames(Request $request)
-    {
-        if($request->ajax())
-        {
-            $output = "";
-            $employees = DB::table('employees')->where('name', 'LIKE', '%'.$request->name_search.'%')->get();
-            if($employees)
-            {
-                foreach($employees as $employee) {
-                    $output .= '<option value="'.$employee->id.'">'.$employee->name.'</option>';
-                }
-                return Response($output);
-            }
-        }
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -193,5 +128,75 @@ class BorrowsController extends Controller
         $borrow->delete();
 
         return redirect('/home/borrow')->with('success', 'Borrowed Item\'s Record has been deleted.');
+    }
+
+    /**
+     * Custom functions
+     * @param Request $request
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
+     */
+    public function search(Request $request)
+    {
+        if($request->ajax())
+        {
+            $output = "";
+            $items = DB::table('item_records')->where('name', 'LIKE', '%'.$request->search.'%')->where('remaining_stocks', '>', '0')->get();
+            if($items)
+            {
+                foreach($items as $item) {
+                    $output .= '<option value="'.$item->id.'">'.$item->name.' | Remaining Stocks ('.$item->remaining_stocks.')</option>';
+                }
+                return Response($output);
+            }
+        }
+    }
+
+    public function employeerecords(Request $request)
+    {
+        if($request->ajax())
+        {
+            $output = "";
+            $items = DB::table('borrow_records')->where('user_id', 'LIKE', '%'.$request->name_selection.'%')->get();
+            if($items)
+            {
+                foreach($items as $item) {
+                    $item_stats = DB::table('item_records')->where('id', '=', $item->item_id)->get(['name', 'stock_code']);
+                    $status = '';
+                    if($item->status > 0) {
+                        $status = '(Cleared)';
+                    }
+                    $output.='<tr>'.
+                        '<td>'.$item_stats[0]->name.' '.$status.'</td>'.
+                        '<td>'.$item_stats[0]->stock_code.'</td>'.
+                        '<td>'.$item->borrowed.'</td>'.
+                        '<td>'.$item->returned.'</td>'.
+                        '<td>'.$item->created_at.'</td>'.
+                        '<td>'.$item->updated_at.'</td>'.
+                        '<td>
+                            <a href="borrow/'.$item->borrow_id.'/edit" class="btn btn-primary">Edit</a>
+                            <a href="borrow/'.$item->borrow_id.'" class="btn btn-primary">Record</a>
+                        </td>'.
+
+                        '</tr>';
+                }
+                return Response($output);
+            }
+        }
+    }
+
+    public function employeenames(Request $request)
+    {
+        if($request->ajax())
+        {
+            $output = "";
+            $employees = DB::table('employees')->where('name', 'LIKE', '%'.$request->name_search.'%')->get();
+            if($employees)
+            {
+                foreach($employees as $employee) {
+                    $output .= '<option value="'.$employee->id.'">'.$employee->name.'</option>';
+                }
+                return Response($output);
+            }
+        }
     }
 }

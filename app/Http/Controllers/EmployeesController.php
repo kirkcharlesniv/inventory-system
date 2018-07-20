@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Employee;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -129,13 +130,18 @@ class EmployeesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy($id)
     {
         $employee = Employee::find($id);
         $employee->delete();
+
+        if (DB::table('borrow_records')->where('user_id', $id)->count() > 0) {
+            DB::table('borrow_records')->where('user_id', $id)->delete();
+        }
 
         return redirect('/home/employees')->with('success', 'Employee has been deleted.');
     }
