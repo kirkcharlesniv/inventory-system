@@ -144,7 +144,7 @@ class BorrowsController extends Controller
             if($items)
             {
                 foreach($items as $item) {
-                    $output .= '<option value="'.$item->id.'">'.$item->name.' | Remaining Stocks ('.$item->remaining_stocks.')</option>';
+                    $output .= '<option value="'.$item->id.'" data-max="'.$item->remaining_stocks.'">'.$item->name.' | Remaining Stocks ('.$item->remaining_stocks.')</option>';
                 }
                 return Response($output);
             }

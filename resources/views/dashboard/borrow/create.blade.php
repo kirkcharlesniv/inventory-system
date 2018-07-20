@@ -27,12 +27,15 @@
     </div>
     <div class="form-group">
         {{Form::label('borrow_number', 'Amount to Borrow')}}
-        {{Form::number('borrow_number', '', ['class' => 'form-control', 'required' => 'required'])}}
+        {{Form::number('borrow_number', '', ['class' => 'form-control', 'required' => 'required', 'min' => 1])}}
     </div>
     {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
     {!! Form::close() !!}
 
     <script type="text/javascript">
+    </script>
+    <script type="text/javascript">
+        var max;
         $('#search').on('keyup',function(){
             $value=$(this).val();
             $.ajax({
@@ -43,9 +46,11 @@
                     $("#item_selection").html(data);
                 }
             });
-        })
-    </script>
-    <script type="text/javascript">
+        });
+        $("#item_selection").on('change', function() {
+            max = $(this).find(':selected').data('max');
+            $("#borrow_number").attr("max", max);
+        });
         $('#name_search').on('keyup',function(){
             $value=$(this).val();
             $.ajax({
@@ -61,7 +66,8 @@
                     $("#name_selection").html(data);
                 }
             });
-        })
+        });
+
     </script>
     <script type="text/javascript">
         $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
