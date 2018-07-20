@@ -47,14 +47,12 @@
                     // this could probably in a function, but whatever.
                     max = parseInt($("#item_selection").find(':selected').data('max'));
                     $("#borrow_number").attr("max", max);
-                    console.log(max);
                 }
             });
         });
         $("#item_selection").on('change', function() {
             max = parseInt($("#item_selection").find(':selected').data('max').toString());
             $("#borrow_number").attr("max", max);
-            console.log(max);
         });
         $('#name_search').on('keyup',function(){
             $value=$(this).val();
