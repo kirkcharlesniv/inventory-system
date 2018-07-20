@@ -45,14 +45,14 @@
                 success:function(data){
                     $("#item_selection").html(data);
                     // this could probably in a function, but whatever.
-                    max = parseInt($(this).find(':selected').data('max').toString());
+                    max = parseInt($("#item_selection").find(':selected').data('max'));
                     $("#borrow_number").attr("max", max);
                     console.log(max);
                 }
             });
         });
         $("#item_selection").on('change', function() {
-            max = parseInt($(this).find(':selected').data('max').toString());
+            max = parseInt($("#item_selection").find(':selected').data('max').toString());
             $("#borrow_number").attr("max", max);
             console.log(max);
         });
