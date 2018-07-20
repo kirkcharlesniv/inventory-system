@@ -20,8 +20,7 @@
     </div>
     <div class="form-group">
         <label for="item_selection">Select A Item</label>
-        <select class="custom-select custom-select-sm form-group" id="item_selection" name="item_selection">
-            <option selected>Select a item</option>
+        <select class="custom-select custom-select-sm form-group" id="item_selection" name="item_selection" required="required">
         </select>
     </div>
     <div class="form-group">
