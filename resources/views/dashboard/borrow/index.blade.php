@@ -14,19 +14,21 @@
             <option selected>Select a Employee</option>
         </select>
     </div>
-    <table class="table table-bordered table-hover">
-        <thead>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead>
             <tr>
                 <th>Item Name</th>
                 <th>Stock Code</th>
+                <th>Status</th>
                 <th>Borrowed</th>
                 <th>Returned</th>
                 <th>Borrowed at</th>
                 <th>Returned at</th>
                 <th>Links</th>
             </tr>
-        </thead>
-        <tbody id="employee-records">
+            </thead>
+            <tbody id="employee-records">
             <tr>
                 <td></td>
                 <td></td>
@@ -36,8 +38,9 @@
                 <td></td>
                 <td></td>
             </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
     <script type="text/javascript">
         $('#name_search').on('keyup',function(){
             $value=$(this).val();

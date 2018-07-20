@@ -4,10 +4,10 @@
 
 @section('card_title', 'Edit a record')
 @section('card_body')
-    <p>Stats: <br> Stock Code: {{ $item->stock_code }}|
-        Item Name: {{ $item->name }} |
-        Borrow ID: {{ $borrow->borrow_id }}
-        <br> You borrowed: {{ $borrow->borrowed }} |
+    <p>Stats: <br> Stock Code: {{ $item->stock_code }} <br>
+        Item Name: {{ $item->name }} <br>
+        Borrow ID: {{ $borrow->borrow_id }} <br><br>
+        You borrowed: {{ $borrow->borrowed }} <br>
         You returned: {{ $borrow->returned }}</p>
     {!! Form::open(['action' => ['BorrowsController@update', $borrow->borrow_id], 'method' => 'POST']) !!}
     <div class="form-group">

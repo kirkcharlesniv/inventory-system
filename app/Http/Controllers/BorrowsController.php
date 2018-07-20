@@ -161,13 +161,14 @@ class BorrowsController extends Controller
             {
                 foreach($items as $item) {
                     $item_stats = DB::table('item_records')->where('id', '=', $item->item_id)->get(['name', 'stock_code']);
-                    $status = '';
+                    $status = 'NOT';
                     if($item->status > 0) {
-                        $status = '(Cleared)';
+                        $status = 'Cleared';
                     }
                     $output.='<tr>'.
-                        '<td>'.$item_stats[0]->name.' '.$status.'</td>'.
+                        '<td>'.$item_stats[0]->name.'</td>'.
                         '<td>'.$item_stats[0]->stock_code.'</td>'.
+                        '<td>'.$status.'</td>'.
                         '<td>'.$item->borrowed.'</td>'.
                         '<td>'.$item->returned.'</td>'.
                         '<td>'.$item->created_at.'</td>'.
