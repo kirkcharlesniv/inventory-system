@@ -154,12 +154,8 @@
                                             </div>
                                             <br>
                                             <div class="row">
-                                                <div class="col-md-12"><button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$smaw->id}}" data-max="
-                                                @if($smaw->initial_stocks == $smaw->remaining_stocks)
-                                                    {{$smaw->initial_stocks}}
-                                                    @else
-                                                    {{abs($smaw->initial_stocks - $smaw->remaining_stocks)}}
-                                                    @endif " data-toggle="modal" data-target="#editItemValue"> Decrement</button>
+                                                <div class="col-md-12">
+                                                    <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$smaw->id}}" data-max="{{$smaw->remaining_stocks}}" data-toggle="modal" data-target="#editItemValue">Decrement</button>
                                                 </div>
                                             </div>
                                         </td>
@@ -270,12 +266,8 @@
                                             </div>
                                             <br>
                                             <div class="row">
-                                                <div class="col-md-12"><button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$pipe->id}}" data-max="
-                                                @if($pipe->initial_stocks == $pipe->remaining_stocks)
-                                                    {{$pipe->initial_stocks}}
-                                                    @else
-                                                    {{abs($pipe->initial_stocks - $pipe->remaining_stocks)}}
-                                                    @endif " data-toggle="modal" data-target="#editItemValue"> Decrement </button>
+                                                <div class="col-md-12">
+                                                    <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$pipe->id}}" data-max="{{$pipe->remaining_stocks}}" data-toggle="modal" data-target="#editItemValue">Decrement</button>
                                                 </div>
                                             </div>
                                         </td>
@@ -386,12 +378,8 @@
                                             </div>
                                             <br>
                                             <div class="row">
-                                                <div class="col-md-12"><button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$dress->id}}" data-max="
-                                                @if($dress->initial_stocks == $dress->remaining_stocks)
-                                                    {{$dress->initial_stocks}}
-                                                    @else
-                                                    {{abs($dress->initial_stocks - $dress->remaining_stocks)}}
-                                                    @endif " data-toggle="modal" data-target="#editItemValue"> Decrement </button>
+                                                <div class="col-md-12">
+                                                    <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$dress->id}}" data-max="{{$dress->remaining_stocks}}" data-toggle="modal" data-target="#editItemValue">Decrement</button>
                                                 </div>
                                             </div>
                                         </td>
@@ -502,12 +490,8 @@
                                             </div>
                                             <br>
                                             <div class="row">
-                                                <div class="col-md-12"><button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$cons->id}}" data-max="
-                                                @if($cons->initial_stocks == $cons->remaining_stocks)
-                                                    {{$cons->initial_stocks}}
-                                                    @else
-                                                    {{abs($cons->initial_stocks - $cons->remaining_stocks)}}
-                                                    @endif " data-toggle="modal" data-target="#editItemValue"> Decrement </button>
+                                                <div class="col-md-12">
+                                                    <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$cons->id}}" data-max="{{$cons->remaining_stocks}}" data-toggle="modal" data-target="#editItemValue">Decrement</button>
                                                 </div>
                                             </div>
                                         </td>
@@ -618,12 +602,8 @@
                                             </div>
                                             <br>
                                             <div class="row">
-                                                <div class="col-md-12"><button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$office->id}}" data-max="
-                                                    @if($office->initial_stocks == $office->remaining_stocks)
-                                                    {{$office->initial_stocks}}
-                                                    @else
-                                                    {{abs($office->initial_stocks - $office->remaining_stocks)}}
-                                                    @endif " data-toggle="modal" data-target="#editItemValue"> Decrement </button>
+                                                <div class="col-md-12">
+                                                    <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$office->id}}" data-max="{{$office->remaining_stocks}}" data-toggle="modal" data-target="#editItemValue">Decrement</button>
                                                 </div>
                                             </div>
                                         </td>
