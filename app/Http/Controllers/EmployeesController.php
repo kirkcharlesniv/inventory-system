@@ -43,7 +43,7 @@ class EmployeesController extends Controller
             'name' => 'required|unique:employees',
             'id_num' => 'required|unique:employees',
             'address' => 'required',
-            'phone' => 'required|unique:employees|min:11|max:11',
+            'phone' => 'required|unique:employees|min:13|max:13',
             'tin_number' => 'required|unique:employees',
             'picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg'
         ]);
@@ -112,7 +112,7 @@ class EmployeesController extends Controller
             'name' => 'required',
             'id_num' => 'required',
             'address' => 'required',
-            'phone' => 'required|min:11|max:11',
+            'phone' => 'required|min:13|max:13',
             'tin_number' => 'required'
         ]);
 
