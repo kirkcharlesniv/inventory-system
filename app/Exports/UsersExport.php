@@ -51,9 +51,11 @@ class UsersExport implements FromCollection, WithMultipleSheets, WithMapping, Sh
     public function sheets(): array
     {
         $sheets = [
-            'Users',
+            'Employees',
             'Borrow Records',
-            'Items Records'
+            'Items Records',
+            'Tools and Equipments',
+            'Materials'
         ];
         $sheets[0] = new UsersExport();
         $sheets[1] = new BorrowRecords();
@@ -71,6 +73,6 @@ class UsersExport implements FromCollection, WithMultipleSheets, WithMapping, Sh
      */
     public function title(): string
     {
-        return 'Users';
+        return 'Employees';
     }
 }
