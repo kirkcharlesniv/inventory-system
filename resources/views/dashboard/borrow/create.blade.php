@@ -27,7 +27,7 @@
     </div>
     <div class="form-group">
         {{Form::label('borrow_number', 'Amount to Borrow')}}
-        {{Form::number('borrow_number', '', ['class' => 'form-control', 'required' => 'required', 'min' => 1])}}
+        {{Form::number('borrow_number', '', ['class' => 'form-control', 'required' => 'required', 'min' => 1, 'max' => '1'])}}
     </div>
     {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
     {!! Form::close() !!}
@@ -48,8 +48,9 @@
             });
         });
         $("#item_selection").on('change', function() {
-            max = $(this).find(':selected').data('max');
+            max = parseInt($(this).find(':selected').data('max').toString());
             $("#borrow_number").attr("max", max);
+            console.log(max);
         });
         $('#name_search').on('keyup',function(){
             $value=$(this).val();
