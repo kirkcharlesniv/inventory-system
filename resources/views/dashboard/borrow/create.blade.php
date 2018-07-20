@@ -11,8 +11,7 @@
     </div>
     <div class="form-group">
         <label for="name_selection">Select a Employee</label>
-        <select class="custom-select custom-select-sm form-group" id="name_selection" name="name_selection">
-            <option selected>Select a Employee</option>
+        <select class="custom-select custom-select-sm form-group" id="name_selection" name="name_selection" required="required">
         </select>
     </div>
     <div class="form-group">
