@@ -44,6 +44,10 @@
                 data:{'search':$value},
                 success:function(data){
                     $("#item_selection").html(data);
+                    // this could probably in a function, but whatever.
+                    max = parseInt($(this).find(':selected').data('max').toString());
+                    $("#borrow_number").attr("max", max);
+                    console.log(max);
                 }
             });
         });
