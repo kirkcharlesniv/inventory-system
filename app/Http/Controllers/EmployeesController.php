@@ -121,7 +121,7 @@ class EmployeesController extends Controller
         $employee->id_num = $request->input('id_num');
         $employee->address = ucwords(strtolower($request->input('address')));
         $employee->phone = ucwords(strtolower($request->input('phone')));
-        $employee->tin_number = ucwords(strtolower($request->input('id_num')));
+        $employee->tin_number = ucwords(strtolower($request->input('tin_number')));
         $employee->save();
 
         return redirect('/home/employees')->with('success', 'New employee has been updated.');
