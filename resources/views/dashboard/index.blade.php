@@ -26,7 +26,7 @@
                                     <form>
                                         <input type="text" class="form-control" id="decrementValue" placeholder="Decrement Value" min="1" max="1">
                                         <br>
-                                        <button id="decrement_btn" class="decrementButton btn btn-danger">Save</button>
+                                        <button id="decrement_btn" class="decrementButton btn btn-info">Save</button>
                                     </form>
                                 </div>
                             </div>
@@ -40,22 +40,22 @@
 @endsection
 
 @section('card_body')
-    <a class="btn btn-success btn-block" href="{{ URL::to('home/items') }}">Show All</a>
+    <a class="btn btn-info btn-block" href="{{ URL::to('home/items') }}">Show All</a>
     <div class="row">
         <div class="col-md-3">
-            <button class="btn btn-primary btn-block" id="smaw">SMAW NC I</button>
+            <button class="btn btn-info btn-block" id="smaw">SMAW NC I</button>
         </div>
         <div class="col-md-3">
-            <button class="btn btn-primary btn-block" id="pipefitting">Pipefitting NC II</button>
+            <button class="btn btn-info btn-block" id="pipefitting">Pipefitting NC II</button>
         </div>
         <div class="col-md-3">
-            <button class="btn btn-primary btn-block" id="dress">Dressmaking NC II</button>
+            <button class="btn btn-info btn-block" id="dress">Dressmaking NC II</button>
         </div>
         <div class="col-md-3">
-            <button class="btn btn-primary btn-block" id="cons">Construction Painting NC II</button>
+            <button class="btn btn-info btn-block" id="cons">Construction Painting NC II</button>
         </div>
     </div>
-    <button class="btn btn-primary btn-block" id="office">Office Supply</button>
+    <button class="btn btn-info btn-block" id="office">Office Supply</button>
 @endsection
 
 @section('custom_content_bottom')
@@ -88,8 +88,8 @@
                                         <td>{{ $smaw->remaining_stocks }}</td>
                                         <td>
                                             <div class="row">
-                                                <div class="col-md-6"><a class="btn btn-primary" href="home/items/{{$smaw->id}}">Show/Delete</a></div>
-                                                <div class="col-md-6"><a class="btn btn-primary" href="home/items/{{$smaw->id}}/edit">Edit</a></div>
+                                                <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$smaw->id}}">Show/Delete</a></div>
+                                                <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$smaw->id}}/edit">Edit</a></div>
                                             </div>
                                         </td>
                                     </tr>
@@ -149,13 +149,13 @@
                                         <td>{{ $smaw->remaining_stocks }}</td>
                                         <td>
                                             <div class="row">
-                                                <div class="col-md-6"><a class="btn btn-primary" href="home/items/{{$smaw->id}}">Show/Delete</a></div>
-                                                <div class="col-md-6"><a class="btn btn-success" href="home/items/{{$smaw->id}}/edit">Edit/Add Value</a></div>
+                                                <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$smaw->id}}">Show/Delete</a></div>
+                                                <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$smaw->id}}/edit">Edit/Add Value</a></div>
                                             </div>
                                             <br>
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$smaw->id}}" data-max="{{$smaw->remaining_stocks}}" data-toggle="modal" data-target="#editItemValue">Decrement</button>
+                                                    <button type="button" class="open-editItemValueDialog btn btn-info" data-id="{{$smaw->id}}" data-max="{{$smaw->remaining_stocks}}" data-toggle="modal" data-target="#editItemValue">Decrement</button>
                                                 </div>
                                             </div>
                                         </td>
@@ -200,8 +200,8 @@
                                         <td>{{ $pipe->remaining_stocks }}</td>
                                         <td>
                                             <div class="row">
-                                                <div class="col-md-6"><a class="btn btn-primary" href="home/items/{{$pipe->id}}">Show/Delete</a></div>
-                                                <div class="col-md-6"><a class="btn btn-primary" href="home/items/{{$pipe->id}}/edit">Edit</a></div>
+                                                <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$pipe->id}}">Show/Delete</a></div>
+                                                <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$pipe->id}}/edit">Edit</a></div>
                                             </div>
                                         </td>
                                     </tr>
@@ -261,13 +261,13 @@
                                         <td>{{ $pipe->remaining_stocks }}</td>
                                         <td>
                                             <div class="row">
-                                                <div class="col-md-6"><a class="btn btn-primary" href="home/items/{{$pipe->id}}">Show/Delete</a></div>
-                                                <div class="col-md-6"><a class="btn btn-success" href="home/items/{{$pipe->id}}/edit">Edit/Add Value</a></div>
+                                                <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$pipe->id}}">Show/Delete</a></div>
+                                                <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$pipe->id}}/edit">Edit/Add Value</a></div>
                                             </div>
                                             <br>
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$pipe->id}}" data-max="{{$pipe->remaining_stocks}}" data-toggle="modal" data-target="#editItemValue">Decrement</button>
+                                                    <button type="button" class="open-editItemValueDialog btn btn-info" data-id="{{$pipe->id}}" data-max="{{$pipe->remaining_stocks}}" data-toggle="modal" data-target="#editItemValue">Decrement</button>
                                                 </div>
                                             </div>
                                         </td>
@@ -312,8 +312,8 @@
                                         <td>{{ $dress->remaining_stocks }}</td>
                                         <td>
                                             <div class="row">
-                                                <div class="col-md-6"><a class="btn btn-primary" href="home/items/{{$dress->id}}">Show/Delete</a></div>
-                                                <div class="col-md-6"><a class="btn btn-primary" href="home/items/{{$dress->id}}/edit">Edit</a></div>
+                                                <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$dress->id}}">Show/Delete</a></div>
+                                                <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$dress->id}}/edit">Edit</a></div>
                                             </div>
                                         </td>
                                     </tr>
@@ -373,13 +373,13 @@
                                         <td>{{ $dress->remaining_stocks }}</td>
                                         <td>
                                             <div class="row">
-                                                <div class="col-md-6"><a class="btn btn-primary" href="home/items/{{$dress->id}}">Show/Delete</a></div>
-                                                <div class="col-md-6"><a class="btn btn-success" href="home/items/{{$dress->id}}/edit">Edit/Add Value</a></div>
+                                                <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$dress->id}}">Show/Delete</a></div>
+                                                <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$dress->id}}/edit">Edit/Add Value</a></div>
                                             </div>
                                             <br>
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$dress->id}}" data-max="{{$dress->remaining_stocks}}" data-toggle="modal" data-target="#editItemValue">Decrement</button>
+                                                    <button type="button" class="open-editItemValueDialog btn btn-info" data-id="{{$dress->id}}" data-max="{{$dress->remaining_stocks}}" data-toggle="modal" data-target="#editItemValue">Decrement</button>
                                                 </div>
                                             </div>
                                         </td>
@@ -424,8 +424,8 @@
                                         <td>{{ $cons->remaining_stocks }}</td>
                                         <td>
                                             <div class="row">
-                                                <div class="col-md-6"><a class="btn btn-primary" href="home/items/{{$cons->id}}">Show/Delete</a></div>
-                                                <div class="col-md-6"><a class="btn btn-primary" href="home/items/{{$cons->id}}/edit">Edit</a></div>
+                                                <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$cons->id}}">Show/Delete</a></div>
+                                                <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$cons->id}}/edit">Edit</a></div>
                                             </div>
                                         </td>
                                     </tr>
@@ -485,13 +485,13 @@
                                         <td>{{ $cons->remaining_stocks }}</td>
                                         <td>
                                             <div class="row">
-                                                <div class="col-md-6"><a class="btn btn-primary" href="home/items/{{$cons->id}}">Show/Delete</a></div>
-                                                <div class="col-md-6"><a class="btn btn-success" href="home/items/{{$cons->id}}/edit">Edit/Add Value</a></div>
+                                                <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$cons->id}}">Show/Delete</a></div>
+                                                <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$cons->id}}/edit">Edit/Add Value</a></div>
                                             </div>
                                             <br>
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$cons->id}}" data-max="{{$cons->remaining_stocks}}" data-toggle="modal" data-target="#editItemValue">Decrement</button>
+                                                    <button type="button" class="open-editItemValueDialog btn btn-info" data-id="{{$cons->id}}" data-max="{{$cons->remaining_stocks}}" data-toggle="modal" data-target="#editItemValue">Decrement</button>
                                                 </div>
                                             </div>
                                         </td>
@@ -536,8 +536,8 @@
                                         <td>{{ $office->remaining_stocks }}</td>
                                         <td>
                                             <div class="row">
-                                                <div class="col-md-6"><a class="btn btn-primary" href="home/items/{{$office->id}}">Show/Delete</a></div>
-                                                <div class="col-md-6"><a class="btn btn-primary" href="home/items/{{$office->id}}/edit">Edit</a></div>
+                                                <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$office->id}}">Show/Delete</a></div>
+                                                <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$office->id}}/edit">Edit</a></div>
                                             </div>
                                         </td>
                                     </tr>
@@ -597,13 +597,13 @@
                                         <td>{{ $office->remaining_stocks }}</td>
                                         <td>
                                             <div class="row">
-                                                <div class="col-md-6"><a class="btn btn-primary" href="home/items/{{$office->id}}">Show/Delete</a></div>
-                                                <div class="col-md-6"><a class="btn btn-success" href="home/items/{{$office->id}}/edit">Edit/Add Value</a></div>
+                                                <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$office->id}}">Show/Delete</a></div>
+                                                <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$office->id}}/edit">Edit/Add Value</a></div>
                                             </div>
                                             <br>
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <button type="button" class="open-editItemValueDialog btn btn-primary" data-id="{{$office->id}}" data-max="{{$office->remaining_stocks}}" data-toggle="modal" data-target="#editItemValue">Decrement</button>
+                                                    <button type="button" class="open-editItemValueDialog btn btn-info" data-id="{{$office->id}}" data-max="{{$office->remaining_stocks}}" data-toggle="modal" data-target="#editItemValue">Decrement</button>
                                                 </div>
                                             </div>
                                         </td>

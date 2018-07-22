@@ -27,7 +27,7 @@
         {{Form::label('borrow_number', 'Amount to Borrow')}}
         {{Form::number('borrow_number', '', ['class' => 'form-control', 'required' => 'required', 'min' => 1, 'max' => '1'])}}
     </div>
-    {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
+    {{Form::submit('Submit', ['class' => 'btn btn-info'])}}
     {!! Form::close() !!}
 
     <script type="text/javascript">

@@ -26,7 +26,7 @@
         {{ Form::text('tin_number', $employee->tin_number, ['class' => 'form-control tin_mask', 'required' => 'required']) }}
     </div>
     {{ Form::hidden('_method', 'PUT') }}
-    {{ Form::submit('Submit', ['class' => 'btn btn-primary']) }}
+    {{ Form::submit('Submit', ['class' => 'btn btn-info']) }}
     {!! Form::close() !!}
     <script>
         $(document).ready(function($){

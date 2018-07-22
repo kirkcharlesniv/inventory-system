@@ -29,7 +29,7 @@
         {{Form::label('tin_number', 'TIN Number')}}
         {{Form::text('tin_number', '', ['class' => 'form-control tin_mask', 'required' => 'required'])}}
     </div>
-    {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
+    {{Form::submit('Submit', ['class' => 'btn btn-info'])}}
     {!! Form::close() !!}
     <script>
         $(document).ready(function($){

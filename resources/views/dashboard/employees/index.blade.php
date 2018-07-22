@@ -18,8 +18,8 @@
                         <td>{{ $employee->id_num }}</td>
                         <td>{{ $employee->name }}</td>
                         <td>
-                            <a class="btn btn-primary" href="employees/{{ $employee->id }}">Profile</a>
-                            <a class="btn btn-primary" href="employees/{{ $employee->id }}/edit">Edit</a>
+                            <a class="btn btn-info" href="employees/{{ $employee->id }}">Profile</a>
+                            <a class="btn btn-info" href="employees/{{ $employee->id }}/edit">Edit</a>
                             <br><br>
                             {!! Form::open(['action' => ['EmployeesController@destroy', $employee->id], 'method' => 'POST']) !!}
                             {{ Form::hidden('_method', 'DELETE') }}

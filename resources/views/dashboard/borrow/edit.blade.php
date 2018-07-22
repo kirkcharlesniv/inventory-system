@@ -16,7 +16,7 @@
     </div>
     {{Form::hidden('item_id', $borrow->item_id)}}
     {{Form::hidden('_method', 'PUT')}}
-    {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
+    {{Form::submit('Submit', ['class' => 'btn btn-info'])}}
     {!! Form::close() !!}
 
     {!! Form::open(['action' => ['BorrowsController@destroy', $borrow->borrow_id], 'method' => 'POST']) !!}

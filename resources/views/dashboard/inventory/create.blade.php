@@ -41,6 +41,6 @@
         {{ Form::label('initial_stocks', 'Initial Stocks') }}
         {{ Form::number('initial_stocks', '', ['class' => 'form-control', 'required' => 'required']) }}
     </div>
-    {{ Form::submit('Submit', ['class' => 'btn btn-primary']) }}
+    {{ Form::submit('Submit', ['class' => 'btn btn-info']) }}
     {!! Form::close() !!}
 @endsection

@@ -38,6 +38,6 @@
         {{ Form::number('remaining_stocks', $item->remaining_stocks, ['class' => 'form-control', 'required' => 'required']) }}
     </div>
     {{ Form::hidden('_method', 'PUT') }}
-    {{ Form::submit('Submit', ['class' => 'btn btn-primary']) }}
+    {{ Form::submit('Submit', ['class' => 'btn btn-info']) }}
     {!! Form::close() !!}
 @endsection

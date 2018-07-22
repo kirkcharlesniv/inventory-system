@@ -24,8 +24,8 @@
                         <td>{{ $item->initial_stocks }}</td>
                         <td>{{ $item->remaining_stocks }}</td>
                         <td>
-                            <a class="btn btn-primary" href="items/{{$item->id}}">Show/Delete</a>
-                            <a class="btn btn-primary" href="items/{{$item->id}}/edit">Edit</a>
+                            <a class="btn btn-info" href="items/{{$item->id}}">Show/Delete</a>
+                            <a class="btn btn-info" href="items/{{$item->id}}/edit">Edit</a>
                         </td>
                     </tr>
                 @endforeach
