@@ -59,30 +59,34 @@ class ItemsRecords implements FromCollection, WithMapping, ShouldAutoSize, WithH
                 $type = "Office Supply";
                 break;
         }
-        if ($row->inventory_type == 1) {
-            switch ($row->material_unit) {
-                case 0:
-                    $material_unit = "Ream/s";
-                    break;
-                case 1:
-                    $material_unit = "Box/es";
-                    break;
-                case 2:
-                    $material_unit = "Kilogram/s";
-                    break;
-                case 3:
-                    $material_unit = "Piece/s";
-                    break;
-                case 4:
-                    $material_unit = "Liter/s";
-                    break;
-                case 5:
-                    $material_unit = "Gallon/s";
-                    break;
-                case 6:
-                    $material_unit = "Quart/s";
-                    break;
-            }
+        switch ($row->material_unit) {
+            case 0:
+                $material_unit = "Ream/s";
+                break;
+            case 1:
+                $material_unit = "Box/es";
+                break;
+            case 2:
+                $material_unit = "Kilogram/s";
+                break;
+            case 3:
+                $material_unit = "Piece/s";
+                break;
+            case 4:
+                $material_unit = "Liter/s";
+                break;
+            case 5:
+                $material_unit = "Gallon/s";
+                break;
+            case 6:
+                $material_unit = "Quart/s";
+                break;
+            case 7:
+                $material_unit = "Set/s";
+                break;
+            case 8:
+                $material_unit = "Unit/s";
+                break;
         }
         switch ($row->inventory_type) {
             case 0:

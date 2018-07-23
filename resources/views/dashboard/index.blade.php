@@ -67,7 +67,7 @@
                     <h4 class="card-title">SMAW NC I</h4>
                 </div>
                 <div class="card-body">
-                    @include('layouts.item_table', ['items' => $smaws_t])
+                    @include('layouts.item_table', ['items' => $smaw_t, 'materials' => 'no'])
                     <br> <hr> <br>
                     @include('layouts.item_table', ['items' => $smaws_m, 'materials' => 'yes'])
                 </div>
@@ -81,7 +81,7 @@
                     <h4 class="card-title">Pipefitting NC II</h4>
                 </div>
                 <div class="card-body">
-                    @include('layouts.item_table', ['items' => $pipes_t])
+                    @include('layouts.item_table', ['items' => $pipe_t, 'materials' => 'no'])
                     <br> <hr> <br>
                     @include('layouts.item_table', ['items' => $pipes_m, 'materials' => 'yes'])
                 </div>
@@ -95,7 +95,7 @@
                     <h4 class="card-title">Dressmaking NC II</h4>
                 </div>
                 <div class="card-body">
-                    @include('layouts.item_table', ['items' => $dresses_t])
+                    @include('layouts.item_table', ['items' => $dresse_t, 'materials' => 'no'])
                     <br> <hr> <br>
                     @include('layouts.item_table', ['items' => $dresses_m, 'materials' => 'yes'])
                 </div>
@@ -109,7 +109,7 @@
                     <h4 class="card-title">Construction Supply NC II</h4>
                 </div>
                 <div class="card-body">
-                    @include('layouts.item_table', ['items' => $conses_t])
+                    @include('layouts.item_table', ['items' => $conse_t, 'materials' => 'no'])
                     <br> <hr> <br>
                     @include('layouts.item_table', ['items' => $conses_m, 'materials' => 'yes'])
                 </div>
@@ -123,7 +123,7 @@
                     <h4 class="card-title">Office Supply</h4>
                 </div>
                 <div class="card-body">
-                    @include('layouts.item_table', ['items' => $offices_t])
+                    @include('layouts.item_table', ['items' => $office_t, 'materials' => 'no'])
                     <br> <hr> <br>
                     @include('layouts.item_table', ['items' => $offices_m, 'materials' => 'yes'])
                 </div>
