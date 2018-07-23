@@ -19,6 +19,13 @@
             .table-responsive {
                 overflow: hidden !important;
             }
+            table.dataTable,
+            table.dataTable th,
+            table.dataTable td {
+                -webkit-box-sizing: content-box;
+                -moz-box-sizing: content-box;
+                box-sizing: content-box;
+            }
         </style>
     </head>
 

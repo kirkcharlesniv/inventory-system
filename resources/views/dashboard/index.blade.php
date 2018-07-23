@@ -136,7 +136,7 @@
             var max_value;
             var table = $('table.display').DataTable({
                 "scrollY":        "200px",
-                "scrollX":         true,
+                "scrollX":         "100%",
                 "scrollCollapse": false,
                 "paging":         false
             });
