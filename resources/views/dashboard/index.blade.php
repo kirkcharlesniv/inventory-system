@@ -134,6 +134,11 @@
             var decrement_value;
             var item_id;
             var max_value;
+            $('table.display').DataTable({
+                scrollY:        200,
+                scrollCollapse: true,
+                paging:         false
+            });
             $(document).on("click", ".open-editItemValueDialog", function () {
                 item_id = $(this).data('id');
                 max_value = $(this).data('max').toString().replace(/\s/g,'');
