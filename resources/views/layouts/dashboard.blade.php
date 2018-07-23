@@ -162,12 +162,11 @@
         </div>
 
         <script src="{{ asset('assets/js/core/jquery.min.js') }}"></script>
-        <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
         <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
+        <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
         <script src="{{ asset('assets/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
-        <script src="{{ asset('assets/js/plugins/bootstrap-notify.js') }}"></script>
         <script src="{{ asset('assets/js/now-ui-dashboard.min.js?v=1.1.0') }}" type="text/javascript"></script>
         <script src="{{ asset('assets/demo/demo.js') }}"></script>
-        <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     </body>
 </html>
