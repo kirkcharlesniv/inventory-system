@@ -44,7 +44,7 @@
                         @endswitch</td>
                     <td>{{ $item->initial_stocks }}</td>
                     <td>{{ $item->remaining_stocks }}</td>
-                    <td style="transform: scale(0.5, 0.5);">
+                    <td>
                         <a class="btn btn-info" href="home/items/{{$item->id}}">Show/Delete</a>
                         <a class="btn btn-info" href="home/items/{{$item->id}}/edit">Edit/Add Value</a>
                         <button type="button" class="open-editItemValueDialog btn btn-info" data-id="{{$item->id}}" data-max="{{$item->remaining_stocks}}" data-toggle="modal" data-target="#editItemValue">Decrement</button>
