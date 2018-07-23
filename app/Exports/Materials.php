@@ -84,6 +84,15 @@ class Materials implements FromCollection, WithMapping, ShouldAutoSize, WithHead
             case 6:
                 $material_unit = "Quart/s";
                 break;
+            case 7:
+                $material_unit = "Set/s";
+                break;
+            case 8:
+                $material_unit = "Unit/s";
+                break;
+            default:
+                $material_unit = "N/A";
+                break;
         }
 
         return [

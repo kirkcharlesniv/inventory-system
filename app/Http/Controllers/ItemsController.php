@@ -47,11 +47,6 @@ class ItemsController extends Controller
             'initial_stocks' => 'required'
         ]);
 
-        if ($request->inventory_type !== 1) {
-            $request->material_unit = 'null';
-        }
-
-
         $item = new Item;
         $item->stock_type = $request->input('stock_type');
         $item->inventory_type = $request->input('inventory_type');
@@ -118,10 +113,6 @@ class ItemsController extends Controller
             'initial_stocks' => 'required',
             'remaining_stocks' => 'required'
         ]);
-
-        if ($request->inventory_type !== 1) {
-            $request->material_unit = 'null';
-        }
 
         $item = Item::find($id);
         $item->stock_type = $request->input('stock_type');

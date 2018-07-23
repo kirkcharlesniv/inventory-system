@@ -5,6 +5,7 @@
         <th>Stock Code</th>
         <th>Name</th>
         <th>Description</th>
+        <th>Unit</th>
         <th>Initial Stocks</th>
         <th>Remaining Stocks</th>
         <th>Links</th>
@@ -16,13 +17,12 @@
                     <td>{{ $item->stock_code }}</td>
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->description }}</td>
+
                     <td>{{ $item->initial_stocks }}</td>
                     <td>{{ $item->remaining_stocks }}</td>
                     <td>
-                        <div class="row">
-                            <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$item->id}}">Show/Delete</a></div>
-                            <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$item->id}}/edit">Edit</a></div>
-                        </div>
+                        <a class="btn btn-info" href="home/items/{{$item->id}}">Show/Delete</a>
+                        <a class="btn btn-info" href="home/items/{{$item->id}}/edit">Edit</a>
                     </td>
                 </tr>
             @endforeach

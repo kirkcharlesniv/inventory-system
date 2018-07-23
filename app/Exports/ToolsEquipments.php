@@ -26,6 +26,7 @@ class ToolsEquipments implements FromCollection, WithMapping, ShouldAutoSize, Wi
     {
         return [
             'Stock Type',
+            'Unit',
             'Item ID',
             'Stock Code',
             'Name',
@@ -42,6 +43,7 @@ class ToolsEquipments implements FromCollection, WithMapping, ShouldAutoSize, Wi
     public function map($row): array
     {
         $type = "";
+        $material_unit = "";
         switch ($row->stock_type) {
             case 0:
                 $type = "SMAW NC I";
@@ -59,9 +61,44 @@ class ToolsEquipments implements FromCollection, WithMapping, ShouldAutoSize, Wi
                 $type = "Office Supply";
                 break;
         }
-
+        switch ($row->material_unit) {
+            case 0:
+                $material_unit = "Ream/s";
+                break;
+            case 1:
+                $material_unit = "Box/es";
+                break;
+            case 2:
+                $material_unit = "Kilogram/s";
+                break;
+            case 3:
+                $material_unit = "Piece/s";
+                break;
+            case 4:
+                $material_unit = "Liter/s";
+                break;
+            case 5:
+                $material_unit = "Gallon/s";
+                break;
+            case 6:
+                $material_unit = "Quart/s";
+                break;
+            case 7:
+                $material_unit = "Set/s";
+                break;
+            case 8:
+                $material_unit = "Unit/s";
+                break;
+            case 'null':
+                $material_unit = "N/A";
+                break;
+            default:
+                $material_unit = "N/A";
+                break;
+        }
         return [
             $type,
+            $material_unit,
             $row->id,
             $row->stock_code,
             $row->name,

@@ -67,9 +67,9 @@
                     <h4 class="card-title">SMAW NC I</h4>
                 </div>
                 <div class="card-body">
-                    @include('layouts.tools_equipments', ['items' => $smaws_m])
+                    @include('layouts.item_table', ['items' => $smaws_t])
                     <br> <hr> <br>
-                    @include('layouts.materials', ['items' => $smaws_t])
+                    @include('layouts.item_table', ['items' => $smaws_m, 'materials' => true])
                 </div>
             </div>
         </div>
@@ -81,9 +81,9 @@
                     <h4 class="card-title">Pipefitting NC II</h4>
                 </div>
                 <div class="card-body">
-                    @include('layouts.tools_equipments', ['items' => $pipes_t])
+                    @include('layouts.item_table', ['items' => $pipes_t])
                     <br> <hr> <br>
-                    @include('layouts.materials', ['items' => $pipes_m])
+                    @include('layouts.item_table', ['items' => $pipes_m, 'materials' => true])
                 </div>
             </div>
         </div>
@@ -95,9 +95,9 @@
                     <h4 class="card-title">Dressmaking NC II</h4>
                 </div>
                 <div class="card-body">
-                    @include('layouts.tools_equipments', ['items' => $dresses_t])
+                    @include('layouts.item_table', ['items' => $dresses_t])
                     <br> <hr> <br>
-                    @include('layouts.materials', ['items' => $dresses_m])
+                    @include('layouts.item_table', ['items' => $dresses_m, 'materials' => true])
                 </div>
             </div>
         </div>
@@ -109,9 +109,9 @@
                     <h4 class="card-title">Construction Supply NC II</h4>
                 </div>
                 <div class="card-body">
-                    @include('layouts.tools_equipments', ['items' => $conses_t])
+                    @include('layouts.item_table', ['items' => $conses_t])
                     <br> <hr> <br>
-                    @include('layouts.materials', ['items' => $conses_m])
+                    @include('layouts.item_table', ['items' => $conses_m, 'materials' => true])
                 </div>
             </div>
         </div>
@@ -123,9 +123,9 @@
                     <h4 class="card-title">Office Supply</h4>
                 </div>
                 <div class="card-body">
-                    @include('layouts.tools_equipments', ['items' => $offices_t])
+                    @include('layouts.item_table', ['items' => $offices_t])
                     <br> <hr> <br>
-                    @include('layouts.materials', ['items' => $offices_m])
+                    @include('layouts.item_table', ['items' => $offices_m, 'materials' => true])
                 </div>
             </div>
         </div>

@@ -15,7 +15,7 @@
     </div>
     <div class="form-group" id="materialDiv">
         {{ Form::label('material_unit', 'Material Type') }}
-        {{ Form::select('material_unit', ['0' => 'Ream/s', '1' => 'Box/es', '2' => 'Kilogram/s', '3' => 'Piece/s', '4' => 'Liter/s', '5' => 'Gallon/s', '6' => 'Quart/s'], $item->material_unit, ['class' => 'form-control']) }}
+        {{ Form::select('material_unit', ['0' => 'Ream/s', '1' => 'Box/es', '2' => 'Kilogram/s', '3' => 'Piece/s', '4' => 'Liter/s', '5' => 'Gallon/s', '6' => 'Quart/s', '7' => 'Set/s', '8' => 'Unit/s'], $item->material_unit, ['class' => 'form-control']) }}
     </div>
     <div class="form-group">
         {{ Form::label('name', 'Name') }}
