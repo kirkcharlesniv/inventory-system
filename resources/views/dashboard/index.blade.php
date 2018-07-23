@@ -137,7 +137,7 @@
             var table = $('table.display').DataTable({
                 "scrollY":        "200px",
                 "scrollX":         true,
-                "scrollCollapse": true,
+                "scrollCollapse": false,
                 "paging":         false
             });
             $(document).on("click", ".open-editItemValueDialog", function () {
