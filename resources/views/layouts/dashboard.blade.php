@@ -15,22 +15,20 @@
         <link href="{{ asset('assets/demo/demo.css') }}" rel="stylesheet" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <style>
-            .table-fixed {
-                width: 100%;
+            .table-fixed thead {
+                width: 97%;
             }
             .table-fixed tbody {
-                height: 200px;
+                height: 230px;
                 overflow-y: auto;
                 width: 100%;
             }
             .table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
                 display: block;
             }
-            .table-fixed tbody td {
+            .table-fixed tbody td, .table-fixed thead > tr> th {
                 float: left;
-            }
-            .table-fixed thead tr th {
-                float: left;
+                border-bottom-width: 0;
             }
         </style>
     </head>
