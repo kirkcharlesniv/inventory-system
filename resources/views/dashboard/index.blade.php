@@ -136,14 +136,13 @@
             var item_id;
             var max_value;
             var table = $('table.display').DataTable({
-                "scrollY":        "200px",
-                "scrollX":         "100%",
-                "scrollCollapse": false,
-                "paging":         false
-            }).scroller.measure();
+                "scrollY":        200,
+                "scrollX":        true
+            });
             jQuery('.dataTable').wrap('');
             $(".dataTables_scrollHeadInner").css({"width":"100%"});
             $(".table ").css({"width":"100%"});
+
             $(document).on("click", ".open-editItemValueDialog", function () {
                 item_id = $(this).data('id');
                 max_value = $(this).data('max').toString().replace(/\s/g,'');

@@ -13,7 +13,7 @@
         <link href="{{ asset('assets/css/now-ui-dashboard.css?v=1.1.0') }}" rel="stylesheet" />
 
         <link href="{{ asset('assets/demo/demo.css') }}" rel="stylesheet" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
         <style>
             table.dataTable,
@@ -174,10 +174,10 @@
             </div>
         </div>
 
-        <script src="{{ asset('assets/js/core/jquery.min.js') }}"></script>
-        <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
         <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-        <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
         {{--<script src="{{ asset('assets/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>--}}
         <script src="{{ asset('assets/js/now-ui-dashboard.min.js?v=1.1.0') }}" type="text/javascript"></script>
         <script src="{{ asset('assets/demo/demo.js') }}"></script>
