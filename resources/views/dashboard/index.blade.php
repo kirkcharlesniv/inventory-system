@@ -136,7 +136,7 @@
             var item_id;
             var max_value;
             var table = $('table.display').DataTable({
-                "scrollY":        250,
+                "scrollY":        200,
                 "scrollX":        true
             });
             jQuery('.dataTable').wrap('');
