@@ -140,7 +140,7 @@
                 "scrollX":         "100%",
                 "scrollCollapse": false,
                 "paging":         false
-            }).columns.adjust();
+            }).columns.adjust().responsive.recalc().scroller.measure().fixedColumns().relayout();
             jQuery('.dataTable').wrap('');
             $(".dataTables_scrollHeadInner").css({"width":"100%"});
             $(".table ").css({"width":"100%"});
