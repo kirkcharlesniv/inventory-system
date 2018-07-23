@@ -66,9 +66,9 @@
                     <h4 class="card-title">SMAW NC I</h4>
                 </div>
                 <div class="card-body">
-                    @include('layouts.tools_equipments', ['items' => $smaws_m])
+                    @include('layouts.tools_equipments', ['items' => $smaws_m, 'table_id' => 1])
                     <br> <hr> <br>
-                    @include('layouts.materials', ['items' => $smaws_t])
+                    @include('layouts.materials', ['items' => $smaws_t, 'table_id' => 2])
                 </div>
             </div>
         </div>
@@ -80,9 +80,9 @@
                     <h4 class="card-title">Pipefitting NC II</h4>
                 </div>
                 <div class="card-body">
-                    @include('layouts.tools_equipments', ['items' => $pipes_t])
+                    @include('layouts.tools_equipments', ['items' => $pipes_t, 'table_id' => 3])
                     <br> <hr> <br>
-                    @include('layouts.materials', ['items' => $pipes_m])
+                    @include('layouts.materials', ['items' => $pipes_m, 'table_id' => 4])
                 </div>
             </div>
         </div>
@@ -94,9 +94,9 @@
                     <h4 class="card-title">Dressmaking NC II</h4>
                 </div>
                 <div class="card-body">
-                    @include('layouts.tools_equipments', ['items' => $dresses_t])
+                    @include('layouts.tools_equipments', ['items' => $dresses_t, 'table_id' => 5])
                     <br> <hr> <br>
-                    @include('layouts.materials', ['items' => $dresses_m])
+                    @include('layouts.materials', ['items' => $dresses_m, 'table_id' => 6])
                 </div>
             </div>
         </div>
@@ -108,9 +108,9 @@
                     <h4 class="card-title">Construction Supply NC II</h4>
                 </div>
                 <div class="card-body">
-                    @include('layouts.tools_equipments', ['items' => $conses_t])
+                    @include('layouts.tools_equipments', ['items' => $conses_t, 'table_id' => 7])
                     <br> <hr> <br>
-                    @include('layouts.materials', ['items' => $conses_m])
+                    @include('layouts.materials', ['items' => $conses_m, 'table_id' => 8])
                 </div>
             </div>
         </div>
@@ -122,9 +122,9 @@
                     <h4 class="card-title">Office Supply</h4>
                 </div>
                 <div class="card-body">
-                    @include('layouts.tools_equipments', ['items' => $offices_t])
+                    @include('layouts.tools_equipments', ['items' => $offices_t, 'table_id' => 9])
                     <br> <hr> <br>
-                    @include('layouts.materials', ['items' => $offices_m])
+                    @include('layouts.materials', ['items' => $offices_m, 'table_id' => 10])
                 </div>
             </div>
         </div>
@@ -134,6 +134,7 @@
             var decrement_value;
             var item_id;
             var max_value;
+            $('table.display').DataTable();
             $(document).on("click", ".open-editItemValueDialog", function () {
                 item_id = $(this).data('id');
                 max_value = $(this).data('max').toString().replace(/\s/g,'');
@@ -187,7 +188,6 @@
                     }, 800
                 );
             });
-            });
             $("#dress").click(function () {
                 $("#smaw_content").fadeOut();
                 $("#pipefitting_content").fadeOut();
@@ -198,17 +198,18 @@
                         $("#dress_content").fadeIn();
                     }, 800
                 );
-        });
-        $("#office").click(function () {
-            $("#smaw_content").fadeOut();
-            $("#pipefitting_content").fadeOut();
-            $("#cons_content").fadeOut();
-            $("#dress_content").fadeOut();
-            setTimeout(
-                function () {
-                    $("#office_content").fadeIn();
-                }, 800
-            );
+            });
+            $("#office").click(function () {
+                $("#smaw_content").fadeOut();
+                $("#pipefitting_content").fadeOut();
+                $("#cons_content").fadeOut();
+                $("#dress_content").fadeOut();
+                setTimeout(
+                    function () {
+                        $("#office_content").fadeIn();
+                    }, 800
+                );
+            });
         });
     </script>
     <script type="text/javascript">
