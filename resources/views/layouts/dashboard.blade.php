@@ -16,9 +16,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
         <style>
-            .table-responsive {
-                overflow: hidden !important;
-            }
             table.dataTable,
             table.dataTable th,
             table.dataTable td {

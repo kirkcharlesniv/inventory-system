@@ -1,5 +1,5 @@
 <h3>Materials</h3>
-<div class="table-responsive">
+<div class="">
     <table class="table table-striped display">
         <thead class="text-primary">
             <tr>
