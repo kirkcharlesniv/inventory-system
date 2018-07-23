@@ -60,7 +60,7 @@
 @endsection
 
 @section('custom_content_bottom')
-    <div class="row" id="smaw_content" style="display:none">
+    <div class="row" id="smaw_content">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
@@ -74,7 +74,7 @@
             </div>
         </div>
     </div>
-    <div class="row" id="pipefitting_content" style="display:none">
+    <div class="row" id="pipefitting_content">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
@@ -88,7 +88,7 @@
             </div>
         </div>
     </div>
-    <div class="row" id="dress_content" style="display:none">
+    <div class="row" id="dress_content">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
@@ -102,7 +102,7 @@
             </div>
         </div>
     </div>
-    <div class="row" id="cons_content" style="display:none">
+    <div class="row" id="cons_content">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
@@ -116,7 +116,7 @@
             </div>
         </div>
     </div>
-    <div class="row" id="office_content" style="display:none">
+    <div class="row" id="office_content">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
@@ -145,6 +145,7 @@
             jQuery('.dataTable').wrap('');
             $(".dataTables_scrollHeadInner").css({"width":"100%"});
             $(".table ").css({"width":"100%"});
+            table.columns.adjust().draw();
 
             $(document).on("click", ".open-editItemValueDialog", function () {
                 item_id = $(this).data('id');
