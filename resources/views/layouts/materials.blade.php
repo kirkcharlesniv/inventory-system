@@ -8,7 +8,9 @@
             <th>Unit</th>
             <th>Initial Stocks</th>
             <th>Remaining Stocks</th>
-            <th>Links</th>
+            <th></th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -43,11 +45,9 @@
                     @endswitch</td>
                 <td>{{ $item->initial_stocks }}</td>
                 <td>{{ $item->remaining_stocks }}</td>
-                <td>
-                    <a class="btn btn-info" href="home/items/{{$item->id}}">Show/Delete</a>
-                    <a class="btn btn-info" href="home/items/{{$item->id}}/edit">Edit/Add Value</a>
-                    <button type="button" class="open-editItemValueDialog btn btn-info" data-id="{{$item->id}}" data-max="{{$item->remaining_stocks}}" data-toggle="modal" data-target="#editItemValue">Decrement</button>
-                </td>
+                <td><a class="btn btn-info" href="home/items/{{$item->id}}">Show/Delete</a></td>
+                <td><a class="btn btn-info" href="home/items/{{$item->id}}/edit">Edit/Add Value</a></td>
+                <td><button type="button" class="open-editItemValueDialog btn btn-info" data-id="{{$item->id}}" data-max="{{$item->remaining_stocks}}" data-toggle="modal" data-target="#editItemValue">Decrement</button></td>
             </tr>
         @endforeach
     @else
