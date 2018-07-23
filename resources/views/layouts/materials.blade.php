@@ -44,9 +44,7 @@
                         @endswitch</td>
                     <td>{{ $item->initial_stocks }}</td>
                     <td>{{ $item->remaining_stocks }}</td>
-                    <td>
-                        <a class="btn btn-info" href="home/items/{{$item->id}}">Show/Delete</a>
-                    </td>
+                    <td> <a class="btn btn-info" href="home/items/{{$item->id}}">Show/Delete</a> </td>
                 </tr>
             @endforeach
         @else
