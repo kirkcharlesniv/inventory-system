@@ -68,7 +68,7 @@
                 <div class="card-body">
                     @include('layouts.tools_equipments', ['items' => $smaws_m])
                     <br> <hr> <br>
-                    @include('layout.layouts.materials', ['items' => $smaws_t])
+                    @include('layouts.materials', ['items' => $smaws_t])
                 </div>
             </div>
         </div>
