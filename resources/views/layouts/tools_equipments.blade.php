@@ -1,6 +1,6 @@
 <h3>Tools and Equipments</h3>
 <div class="table-responsive">
-    <table class="table">
+    <table class="table table-striped">
         <thead class="text-primary">
         <th>Stock Code</th>
         <th>Name</th>

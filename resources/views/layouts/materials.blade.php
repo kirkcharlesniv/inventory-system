@@ -1,7 +1,7 @@
 <h3>Materials</h3>
 <div class="table-responsive">
-    <table class="table">
-        <thead class=" text-primary">
+    <table class="table table-striped header-fixed">
+        <thead class="text-primary">
         <th>Stock Code</th>
         <th>Name</th>
         <th>Description</th>
