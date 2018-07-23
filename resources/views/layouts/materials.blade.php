@@ -1,5 +1,5 @@
 <h3>Materials</h3>
-<table class="table table-striped display">
+<table class="table table-striped display" style="width: 100% !important;">
     <thead class="text-primary">
         <tr>
             <th>Stock Code</th>
