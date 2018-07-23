@@ -135,9 +135,9 @@
             var item_id;
             var max_value;
             $('table.display').DataTable({
-                scrollY:        200,
-                scrollCollapse: true,
-                paging:         false
+                "scrollY":        "200px",
+                "scrollCollapse": true,
+                "paging":         false
             });
             $(document).on("click", ".open-editItemValueDialog", function () {
                 item_id = $(this).data('id');
