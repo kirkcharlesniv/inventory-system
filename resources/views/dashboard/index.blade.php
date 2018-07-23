@@ -67,9 +67,9 @@
                     <h4 class="card-title">SMAW NC I</h4>
                 </div>
                 <div class="card-body">
-                    @include('layouts.tools_equipments', ['items' => $smaws_m, 'table_id' => 1])
+                    @include('layouts.tools_equipments', ['items' => $smaws_m])
                     <br> <hr> <br>
-                    @include('layouts.materials', ['items' => $smaws_t, 'table_id' => 2])
+                    @include('layouts.materials', ['items' => $smaws_t])
                 </div>
             </div>
         </div>
@@ -81,9 +81,9 @@
                     <h4 class="card-title">Pipefitting NC II</h4>
                 </div>
                 <div class="card-body">
-                    @include('layouts.tools_equipments', ['items' => $pipes_t, 'table_id' => 3])
+                    @include('layouts.tools_equipments', ['items' => $pipes_t])
                     <br> <hr> <br>
-                    @include('layouts.materials', ['items' => $pipes_m, 'table_id' => 4])
+                    @include('layouts.materials', ['items' => $pipes_m])
                 </div>
             </div>
         </div>
@@ -95,9 +95,9 @@
                     <h4 class="card-title">Dressmaking NC II</h4>
                 </div>
                 <div class="card-body">
-                    @include('layouts.tools_equipments', ['items' => $dresses_t, 'table_id' => 5])
+                    @include('layouts.tools_equipments', ['items' => $dresses_t])
                     <br> <hr> <br>
-                    @include('layouts.materials', ['items' => $dresses_m, 'table_id' => 6])
+                    @include('layouts.materials', ['items' => $dresses_m])
                 </div>
             </div>
         </div>
@@ -109,9 +109,9 @@
                     <h4 class="card-title">Construction Supply NC II</h4>
                 </div>
                 <div class="card-body">
-                    @include('layouts.tools_equipments', ['items' => $conses_t, 'table_id' => 7])
+                    @include('layouts.tools_equipments', ['items' => $conses_t])
                     <br> <hr> <br>
-                    @include('layouts.materials', ['items' => $conses_m, 'table_id' => 8])
+                    @include('layouts.materials', ['items' => $conses_m])
                 </div>
             </div>
         </div>
@@ -123,9 +123,9 @@
                     <h4 class="card-title">Office Supply</h4>
                 </div>
                 <div class="card-body">
-                    @include('layouts.tools_equipments', ['items' => $offices_t, 'table_id' => 9])
+                    @include('layouts.tools_equipments', ['items' => $offices_t])
                     <br> <hr> <br>
-                    @include('layouts.materials', ['items' => $offices_m, 'table_id' => 10])
+                    @include('layouts.materials', ['items' => $offices_m])
                 </div>
             </div>
         </div>
@@ -136,8 +136,8 @@
             var item_id;
             var max_value;
             var table = $('table.display').DataTable({
-                "scrollY":        350,
-                "scrollX":        true,
+                "scrollY":        250,
+                "scrollX":        true
             });
             jQuery('.dataTable').wrap('');
             $(".dataTables_scrollHeadInner").css({"width":"100%"});
