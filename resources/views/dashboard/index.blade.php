@@ -69,7 +69,7 @@
                 <div class="card-body">
                     @include('layouts.item_table', ['items' => $smaws_t])
                     <br> <hr> <br>
-                    @include('layouts.item_table', ['items' => $smaws_m, 'materials' => true])
+                    @include('layouts.item_table', ['items' => $smaws_m, 'materials' => 'yes'])
                 </div>
             </div>
         </div>
@@ -83,7 +83,7 @@
                 <div class="card-body">
                     @include('layouts.item_table', ['items' => $pipes_t])
                     <br> <hr> <br>
-                    @include('layouts.item_table', ['items' => $pipes_m, 'materials' => true])
+                    @include('layouts.item_table', ['items' => $pipes_m, 'materials' => 'yes'])
                 </div>
             </div>
         </div>
@@ -97,7 +97,7 @@
                 <div class="card-body">
                     @include('layouts.item_table', ['items' => $dresses_t])
                     <br> <hr> <br>
-                    @include('layouts.item_table', ['items' => $dresses_m, 'materials' => true])
+                    @include('layouts.item_table', ['items' => $dresses_m, 'materials' => 'yes'])
                 </div>
             </div>
         </div>
@@ -111,7 +111,7 @@
                 <div class="card-body">
                     @include('layouts.item_table', ['items' => $conses_t])
                     <br> <hr> <br>
-                    @include('layouts.item_table', ['items' => $conses_m, 'materials' => true])
+                    @include('layouts.item_table', ['items' => $conses_m, 'materials' => 'yes'])
                 </div>
             </div>
         </div>
@@ -125,7 +125,7 @@
                 <div class="card-body">
                     @include('layouts.item_table', ['items' => $offices_t])
                     <br> <hr> <br>
-                    @include('layouts.item_table', ['items' => $offices_m, 'materials' => true])
+                    @include('layouts.item_table', ['items' => $offices_m, 'materials' => 'yes'])
                 </div>
             </div>
         </div>

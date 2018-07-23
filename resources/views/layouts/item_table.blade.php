@@ -1,4 +1,4 @@
-@if($materials)
+@if($materials == 'yes')
     <h3>Materials</h3>
 @else
     <h3>Tools and Equipments</h3>
@@ -56,7 +56,7 @@
                 <td>
                     <a class="btn btn-info" href="home/items/{{$item->id}}">Show/Delete</a>
                     <a class="btn btn-info" href="home/items/{{$item->id}}/edit">Edit/Add Value</a>
-                    @if($materials)
+                    @if($materials == 'yes')
                         <button type="button" class="open-editItemValueDialog btn btn-info" data-id="{{$item->id}}" data-max="{{$item->remaining_stocks}}" data-toggle="modal" data-target="#editItemValue">Decrement</button>
                     @endif
                 </td>
