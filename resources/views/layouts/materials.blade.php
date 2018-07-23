@@ -1,6 +1,6 @@
 <h3>Materials</h3>
 <div class="table-responsive">
-    <table class="table table-striped header-fixed">
+    <table class="table table-striped table-fixed">
         <thead class="text-primary">
         <th>Stock Code</th>
         <th>Name</th>
