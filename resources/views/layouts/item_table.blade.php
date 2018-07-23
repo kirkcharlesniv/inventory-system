@@ -50,6 +50,12 @@
                         @case(8)
                             Unit/s
                             @break
+                        @case('null')
+                            N/A
+                            @break
+                        @default
+                            N/A
+                            @break
                     @endswitch</td>
                 <td>{{ $item->initial_stocks }}</td>
                 <td>{{ $item->remaining_stocks }}</td>
