@@ -20,8 +20,9 @@
             table.dataTable th,
             table.dataTable td {
                 -webkit-box-sizing: content-box !important;
-                -moz-box-sizing: content-box !important;;
-                box-sizing: content-box !important;;
+                -moz-box-sizing: content-box !important;
+                box-sizing: content-box !important;
+                white-space: nowrap !important;
             }
             .scrollStyle
             {
