@@ -13,8 +13,8 @@
         <link href="{{ asset('assets/css/now-ui-dashboard.css?v=1.1.0') }}" rel="stylesheet" />
 
         <link href="{{ asset('assets/demo/demo.css') }}" rel="stylesheet" />
-        <link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
 
     </head>
 
@@ -164,10 +164,10 @@
         <script src="{{ asset('assets/js/core/jquery.min.js') }}"></script>
         <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
         <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
-        <script src="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"></script>
         <script src="{{ asset('assets/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
         <script src="{{ asset('assets/js/plugins/bootstrap-notify.js') }}"></script>
         <script src="{{ asset('assets/js/now-ui-dashboard.min.js?v=1.1.0') }}" type="text/javascript"></script>
         <script src="{{ asset('assets/demo/demo.js') }}"></script>
+        <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     </body>
 </html>
