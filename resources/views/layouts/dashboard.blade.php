@@ -19,13 +19,13 @@
             table.dataTable,
             table.dataTable th,
             table.dataTable td {
-                -webkit-box-sizing: content-box;
-                -moz-box-sizing: content-box;
-                box-sizing: content-box;
+                -webkit-box-sizing: content-box !important;
+                -moz-box-sizing: content-box !important;;
+                box-sizing: content-box !important;;
             }
             .scrollStyle
             {
-                overflow-x:auto;
+                overflow-x:auto !important;;
             }
         </style>
     </head>

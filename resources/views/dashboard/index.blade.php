@@ -141,6 +141,8 @@
                 "paging":         false
             });
             jQuery('.dataTable').wrap('');
+            $(".dataTables_scrollHeadInner").css({"width":"100%"});
+            $(".table ").css({"width":"100%"});
             $(document).on("click", ".open-editItemValueDialog", function () {
                 item_id = $(this).data('id');
                 max_value = $(this).data('max').toString().replace(/\s/g,'');
