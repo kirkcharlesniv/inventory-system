@@ -44,17 +44,10 @@
                         @endswitch</td>
                     <td>{{ $item->initial_stocks }}</td>
                     <td>{{ $item->remaining_stocks }}</td>
-                    <td>
-                        <div class="row">
-                            <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$item->id}}">Show/Delete</a></div>
-                            <div class="col-md-6"><a class="btn btn-info" href="home/items/{{$item->id}}/edit">Edit/Add Value</a></div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <button type="button" class="open-editItemValueDialog btn btn-info" data-id="{{$item->id}}" data-max="{{$item->remaining_stocks}}" data-toggle="modal" data-target="#editItemValue">Decrement</button>
-                            </div>
-                        </div>
+                    <td style="transform: scale(0.5, 0.5);">
+                        <a class="btn btn-info" href="home/items/{{$item->id}}">Show/Delete</a>
+                        <a class="btn btn-info" href="home/items/{{$item->id}}/edit">Edit/Add Value</a>
+                        <button type="button" class="open-editItemValueDialog btn btn-info" data-id="{{$item->id}}" data-max="{{$item->remaining_stocks}}" data-toggle="modal" data-target="#editItemValue">Decrement</button>
                     </td>
                 </tr>
             @endforeach
