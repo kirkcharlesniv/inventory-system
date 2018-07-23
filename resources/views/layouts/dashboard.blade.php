@@ -23,8 +23,9 @@
                 -moz-box-sizing: content-box;
                 box-sizing: content-box;
             }
-            .display {
-                width: 4000px;
+            .scrollStyle
+            {
+                overflow-x:auto;
             }
         </style>
     </head>

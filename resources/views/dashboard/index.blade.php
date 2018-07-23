@@ -139,7 +139,8 @@
                 "scrollX":         "100%",
                 "scrollCollapse": false,
                 "paging":         false
-            }).draw();
+            });
+            jQuery('.dataTable').wrap('');
             $(document).on("click", ".open-editItemValueDialog", function () {
                 item_id = $(this).data('id');
                 max_value = $(this).data('max').toString().replace(/\s/g,'');
