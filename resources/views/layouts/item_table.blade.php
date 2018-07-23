@@ -56,7 +56,7 @@
                 <td>
                     <a class="btn btn-info" href="home/items/{{$item->id}}">Show/Delete</a>
                     <a class="btn btn-info" href="home/items/{{$item->id}}/edit">Edit/Add Value</a>
-                    @if($materials == 'yes')
+                    @if($item->inventory_type == 1)
                         <button type="button" class="open-editItemValueDialog btn btn-info" data-id="{{$item->id}}" data-max="{{$item->remaining_stocks}}" data-toggle="modal" data-target="#editItemValue">Decrement</button>
                     @endif
                 </td>
