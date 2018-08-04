@@ -1,6 +1,7 @@
-@extends('layouts.auth')
-@yield('page_title', 'Login')
+@extends('layouts.auth_template')
+@section('page_title', 'Login')
 
+@section('body')
 <form class="login100-form validate-form flex-sb flex-w" method="POST" action="{{ route('login') }}" aria-label="{{ __('Register') }}">
     @csrf
 
@@ -42,3 +43,4 @@
         </a>
     </div>
 </form>
+@endsection

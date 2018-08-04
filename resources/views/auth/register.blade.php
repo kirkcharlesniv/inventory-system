@@ -1,4 +1,4 @@
-@extends('layouts.auth')
+@extends('layouts.auth_template')
 @yield('page_title', 'Register')
 
 <form class="login100-form validate-form flex-sb flex-w" method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
