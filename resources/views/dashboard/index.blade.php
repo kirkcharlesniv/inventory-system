@@ -132,10 +132,10 @@
     </div>
     <script type="text/javascript">
         $(document).ready(function () {
-            var decrement_value;
-            var item_id;
-            var max_value;
-            var table = $('table.display').DataTable({
+            let decrement_value;
+            let item_id;
+            let max_value;
+            let table = $('table.display').DataTable({
                 "scrollY":        200,
                 "scrollX":        true,
                 "scrollCollapse": true,
