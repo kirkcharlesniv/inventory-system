@@ -156,7 +156,7 @@ class BorrowsController extends Controller
         if($request->ajax())
         {
             $output = "";
-            $items = DB::table('borrow_records')->where('user_id', \'LIKE', '%'.$request->name_selection.'%')->get();
+            $items = DB::table('borrow_records')->where('user_id', 'LIKE', '%'.$request->name_selection.'%')->get();
             if($items)
             {
                 foreach($items as $item) {
