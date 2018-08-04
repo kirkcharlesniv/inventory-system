@@ -156,18 +156,17 @@ class BorrowsController extends Controller
         if($request->ajax())
         {
             $output = "";
-            $items = DB::table('borrow_records')->where('user_id', 'LIKE', '%'.$request->name_selection.'%')->get();
+            $items = DB::table('borrow_records')->where('user_id', \'LIKE', '%'.$request->name_selection.'%')->get();
             if($items)
             {
                 foreach($items as $item) {
-                    $item_stats = DB::table('item_records')->where('id', '=', $item->item_id)->get(['name', 'stock_code']);
+                    $item_stats = DB::table('item_records')->where('id', '=', $item->item_id)->get(['name']);
                     $status = 'NOT';
                     if($item->status > 0) {
                         $status = 'Cleared';
                     }
                     $output.='<tr>'.
                         '<td>'.$item_stats[0]->name.'</td>'.
-                        '<td>'.$item_stats[0]->stock_code.'</td>'.
                         '<td>'.$status.'</td>'.
                         '<td>'.$item->borrowed.'</td>'.
                         '<td>'.$item->returned.'</td>'.

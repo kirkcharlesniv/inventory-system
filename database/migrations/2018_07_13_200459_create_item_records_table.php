@@ -15,7 +15,6 @@ class CreateItemRecordsTable extends Migration
     {
         Schema::create('item_records', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('stock_code');
             $table->string('name');
             $table->mediumText('description');
             $table->bigInteger('initial_stocks');

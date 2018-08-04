@@ -6,7 +6,6 @@
 <table class="table table-striped display">
     <thead class="text-primary">
         <tr>
-            <th>Stock Code</th>
             <th>Name</th>
             <th>Description</th>
             <th>Unit</th>
@@ -19,7 +18,6 @@
     @if(count($items) > 0)
         @foreach($items as $item)
             <tr>
-                <td>{{ $item->stock_code }}</td>
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->description }}</td>
                 <td>@switch($item->material_unit)

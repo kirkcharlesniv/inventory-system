@@ -28,8 +28,6 @@ class Materials implements FromCollection, WithMapping, ShouldAutoSize, WithHead
         return [
             'Stock Type',
             'Unit',
-            'Item ID',
-            'Stock Code',
             'Name',
             'Description',
             'Initial Stocks',
@@ -98,8 +96,6 @@ class Materials implements FromCollection, WithMapping, ShouldAutoSize, WithHead
         return [
             $type,
             $material_unit,
-            $row->id,
-            $row->stock_code,
             $row->name,
             $row->description,
             $row->initial_stocks,

@@ -22,10 +22,6 @@
         {{ Form::text('name', $item->name, ['class' => 'form-control', 'required' => 'required']) }}
     </div>
     <div class="form-group">
-        {{ Form::label('stock_code', 'Stock Code') }}
-        {{ Form::text('stock_code', $item->stock_code, ['class' => 'form-control', 'required' => 'required']) }}
-    </div>
-    <div class="form-group">
         {{ Form::label('description', 'Description') }}
         {{ Form::text('description', $item->description, ['class' => 'form-control', 'required' => 'required']) }}
     </div>

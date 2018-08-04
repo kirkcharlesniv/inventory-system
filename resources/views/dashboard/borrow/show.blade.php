@@ -8,7 +8,6 @@
         <thead>
         <tr>
             <th>Item Name</th>
-            <th>Stock Code</th>
             <th>Borrowed</th>
             <th>Returned</th>
             <th>Borrowed at</th>
@@ -19,7 +18,6 @@
         <tbody id="employee-records">
         <tr>
             <td>{{ $item->name }}</td>
-            <td>{{ $item->stock_code }}</td>
             <td>{{ $borrow->borrowed }}</td>
             <td>{{ $borrow->returned }}</td>
             <td>{{ $borrow->created_at }}</td>

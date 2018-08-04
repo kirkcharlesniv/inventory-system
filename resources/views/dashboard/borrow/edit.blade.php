@@ -4,7 +4,7 @@
 
 @section('card_title', 'Edit a record')
 @section('card_body')
-    <p>Stats: <br> Stock Code: {{ $item->stock_code }} <br>
+    <p>Stats: <br>
         Item Name: {{ $item->name }} <br>
         Borrow ID: {{ $borrow->borrow_id }} <br><br>
         You borrowed: {{ $borrow->borrowed }} <br>

@@ -10,7 +10,6 @@
     <div class="table-responsive">
         <table class="table">
             <thead class=" text-primary">
-            <th>Stock Code</th>
             <th>Name</th>
             <th>Description</th>
             <th>Initial Stocks</th>
@@ -20,7 +19,6 @@
             <tbody>
             @if(!empty($item))
                 <tr>
-                    <td>{{ $item->stock_code }}</td>
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->description }}</td>
                     <td>{{ $item->initial_stocks }}</td>

@@ -15,7 +15,7 @@ class ItemsController extends Controller
      */
     public function index()
     {
-        $items = Item::orderBy('stock_code', 'asc')->paginate(25);
+        $items = Item::orderBy('name', 'asc')->paginate(25);
         return view('dashboard.inventory.index')->with('items', $items);
     }
 
@@ -42,7 +42,6 @@ class ItemsController extends Controller
             'inventory_type' => 'required',
             'material_unit' => 'required',
             'name' => 'required',
-            'stock_code' => 'required|unique:item_records',
             'description' => 'required',
             'initial_stocks' => 'required'
         ]);
@@ -52,7 +51,6 @@ class ItemsController extends Controller
         $item->inventory_type = $request->input('inventory_type');
         $item->material_unit = $request->input('material_unit');
         $item->name = ucwords(strtolower($request->input('name')));
-        $item->stock_code = ucwords(strtolower($request->input('stock_code')));
         $item->description = ucwords(strtolower($request->input('description')));
         $item->initial_stocks = ucwords(strtolower($request->input('initial_stocks')));
         $item->remaining_stocks = ucwords(strtolower($request->input('initial_stocks')));
@@ -108,7 +106,6 @@ class ItemsController extends Controller
             'inventory_type' => 'required',
             'material_unit' => 'required',
             'name' => 'required',
-            'stock_code' => 'required',
             'description' => 'required',
             'initial_stocks' => 'required',
             'remaining_stocks' => 'required'
@@ -119,7 +116,6 @@ class ItemsController extends Controller
         $item->inventory_type = $request->input('inventory_type');
         $item->material_unit = $request->input('material_unit');
         $item->name = ucwords(strtolower($request->input('name')));
-        $item->stock_code = ucwords(strtolower($request->input('stock_code')));
         $item->description = ucwords(strtolower($request->input('description')));
         $item->initial_stocks = ucwords(strtolower($request->input('initial_stocks')));
         $item->remaining_stocks = ucwords(strtolower($request->input('remaining_stocks')));

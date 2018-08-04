@@ -19,7 +19,6 @@
             <thead>
             <tr>
                 <th>Item Name</th>
-                <th>Stock Code</th>
                 <th>Status</th>
                 <th>Borrowed</th>
                 <th>Returned</th>
