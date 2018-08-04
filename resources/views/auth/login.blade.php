@@ -37,10 +37,10 @@
         </button>
     </div>
 
-    <div class="w-full text-center p-t-55">
-        <a href="{{ URL::to('/register') }}" class="txt2 bo1">
-            Sign Up
-        </a>
-    </div>
+    {{--<div class="w-full text-center p-t-55">--}}
+        {{--<a href="{{ URL::to('/register') }}" class="txt2 bo1">--}}
+            {{--Sign Up--}}
+        {{--</a>--}}
+    {{--</div>--}}
 </form>
 @endsection

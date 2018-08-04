@@ -17,9 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-//Route::get('/register', function () {
-////   abort(404);
-////});
+Route::get('/register', function () {
+   abort(404);
+});
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('home', 'DashboardController@index')->name('home');
