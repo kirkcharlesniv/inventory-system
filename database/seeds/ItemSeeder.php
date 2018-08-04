@@ -11,7 +11,6 @@ class ItemSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i <= 300; $i++) {
             DB::table('item_records')->insert([
                 'name' => str_random(32),
                 'description' => str_random(64),
@@ -21,6 +20,5 @@ class ItemSeeder extends Seeder
                 'inventory_type' => rand(0, 1),
                 'material_unit' => rand(0, 9)
             ]);
-        }
     }
 }
