@@ -21,7 +21,7 @@ class Materials implements FromCollection, WithMapping, ShouldAutoSize, WithHead
     public function collection()
     {
         // TODO: Implement collection() method.
-        return Item::where('inventory_type', '1')->orderBy('stock_code', 'asc')->get();
+        return Item::where('inventory_type', '1')->orderBy('name', 'asc')->get();
     }
     public function headings(): array
     {

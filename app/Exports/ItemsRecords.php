@@ -14,7 +14,7 @@ class ItemsRecords implements FromCollection, WithMapping, ShouldAutoSize, WithH
     public function collection()
     {
         // TODO: Implement collection() method.
-        return Item::orderBy('stock_code', 'asc')->get();
+        return Item::orderBy('name', 'asc')->get();
     }
 
     public function headings(): array

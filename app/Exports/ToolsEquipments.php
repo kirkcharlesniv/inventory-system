@@ -20,7 +20,7 @@ class ToolsEquipments implements FromCollection, WithMapping, ShouldAutoSize, Wi
     public function collection()
     {
         // TODO: Implement collection() method.
-        return Item::where('inventory_type', '0')->orderBy('stock_code', 'asc')->get();
+        return Item::where('inventory_type', '0')->orderBy('name', 'asc')->get();
     }
     public function headings(): array
     {
