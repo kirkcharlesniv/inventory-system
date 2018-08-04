@@ -16,17 +16,18 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get('/register', function () {
-    abort(404);
-});
+
+//Route::get('/register', function () {
+////   abort(404);
+////});
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('home', 'DashboardController@index')->name('home');
 
-    Route::get('home/borrow/search', 'BorrowsController@search')->name('search');
-    Route::get('home/borrow/employeerecords', 'BorrowsController@employeerecords')->name('search');
-    Route::get('home/borrow/employeenames', 'BorrowsController@employeenames')->name('name_search');
-    Route::get('home/items/decrement', 'ItemsController@decrement')->name('decrement');
+    Route::get('home/borrow/search', 'BorrowsController@search');
+    Route::get('home/borrow/employeerecords', 'BorrowsController@employeerecords');
+    Route::get('home/borrow/employeenames', 'BorrowsController@employeenames');
+    Route::get('home/items/decrement', 'ItemsController@decrement');
 
     Route::resource('home/employees', 'EmployeesController');
     Route::resource('home/borrow', 'BorrowsController');
