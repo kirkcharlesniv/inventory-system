@@ -18,17 +18,68 @@
     </head>
 
     <body>
-        {{--@include('layouts.navbar')--}}
         <div class="wrapper ">
             <div class="sidebar" data-color="blue">
                 <div class="logo">
                     <a href="https://facebook.com/callmackoy" class="simple-text logo-mini">
-                        M. E.
+                        M. E
                     </a>
                     <a href="https://facebook.com/callmackoy" class="simple-text logo-normal">
                         Inventory System
                     </a>
                 </div>
+                <div class="sidebar-wrapper" style="overflow: hidden;">
+                    <ul class="nav">
+                        <li class="{{active_check('home')}}">
+                            <a href="{{ URL::route('home') }}">
+                                <i class="now-ui-icons loader_gear"></i>
+                                <p>Inventory</p>
+                            </a>
+                        </li>
+                        <li class="{{active_check('home/items/create')}}">
+                            <a href="{{ action('ItemsController@create') }}">
+                                <i class="now-ui-icons design-2_ruler-pencil"></i>
+                                <p>Create New Item</p>
+                            </a>
+                        </li>
+                        <hr>
+                        <li class="{{active_check('home/employees')}}">
+                            <a href="{{ action('EmployeesController@index') }}">
+                                <i class="now-ui-icons users_single-02"></i>
+                                <p>Employees</p>
+                            </a>
+                        </li>
+                        <li class="{{active_check('home/employees/create')}}">
+                            <a href="{{ action('EmployeesController@create') }}">
+                                <i class="now-ui-icons education_hat"></i>
+                                <p>Register A New Employee</p>
+                            </a>
+                        </li>
+                        <hr>
+                        <li class="{{active_check('home/borrow')}}">
+                            <a href="{{ action('BorrowsController@index') }}">
+                                <i class="now-ui-icons shopping_delivery-fast"></i>
+                                <p>Borrowed Item</p>
+                            </a>
+                        </li>
+                        <li class="{{active_check('home/borrow/create')}}">
+                            <a href="{{ action('BorrowsController@create') }}">
+                                <i class="now-ui-icons design-2_ruler-pencil"></i>
+                                <p>Borrow New Item</p>
+                            </a>
+                        </li>
+                        <hr>
+                        <li>
+                            <a href="{{ URL::to('home/export') }}" target="_blank">
+                                <i class="now-ui-icons design-2_ruler-pencil"></i>
+                                <p>Export All Data to Excel</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-panel">
+                <!-- Navbar -->
                 <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary fixed-top">
                     <div class="container-fluid">
                         <div class="navbar-wrapper">
@@ -66,34 +117,48 @@
                         </div>
                     </div>
                 </nav>
-            </div>
-        </div>
-        <div class="main-panel">
-            @include('layouts.dashboard.navbar')
-
-            <div class="panel-header panel-header-sm">
-            </div>
-
-            <div class="content">
-                @yield('custom_content_top')
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">@yield('card_title')</h4>
-                            </div>
-                            <div class="card-body">
-                                @include('layouts.messages')
-                                @yield('card_body')
+                <!-- End Navbar -->
+                <div class="panel-header panel-header-sm">
+                </div>
+                <div class="content">
+                    @yield('custom_content_top')
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">@yield('card_title')</h4>
+                                </div>
+                                <div class="card-body">
+                                    @include('layouts.messages')
+                                    @yield('card_body')
+                                </div>
                             </div>
                         </div>
                     </div>
+                    @yield('custom_content_bottom')
                 </div>
-                @yield('custom_content_bottom')
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="https://facebook.com/callmackoy">
+                                        Mark Elias Gunao
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="copyright">
+                            &copy;
+                            <script> document.write(new Date().getFullYear().toString()) </script>,
+                            Designed and Coded by
+                                <a href="https://facebook.com/callmackoy" target="_blank">Mark Elias Gunao</a> and <a href="https://facebook.com/kirk.niverba.9" target="_blank"> Kirk Charles Niverba</a>. Template by
+                                <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+                        </div>
+                    </div>
+                </footer>
             </div>
-            @include('layouts.dashboard.footer')
         </div>
-
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
